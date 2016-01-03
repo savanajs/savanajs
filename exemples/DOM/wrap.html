@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Savana | Wrap</title>
+  <link rel="stylesheet" href="/lib/css/animate.min.css">
+  <link rel="stylesheet" href="/lib/css/savana.css">
+  <script src="/lib/js/savana.js"></script> 
+<script>
+
+$savana(document).done(function(e) {
+
+  var start_time = savana.time();
+
+  // Inserir um elemneto envolta de outro
+  $savana(".n1").wrap("<div class='wrap'>","</div>");
+
+  savana.endTime(start_time);
+
+});
+
+</script>
+</head>
+<body>
+
+    <div class="n1" rel="test">
+      test1
+      <div class="n2">
+        test2
+      </div>
+    </div>
+
+</body>
+</html>

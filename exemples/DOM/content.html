@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Savana | Content</title>
+  <link rel="stylesheet" href="/lib/css/animate.min.css">
+  <link rel="stylesheet" href="/lib/css/savana.css">
+  <script src="/lib/js/savana.js"></script> 
+<script>
+
+$savana(document).done(function(e) {
+
+  var start_time = savana.time();
+
+  // Insert content
+  $savana("div.n1").content("html","<b>Content HTML....</b>");
+  $savana("div.n2").content("text","Text content");
+  $savana("input").content("val","Value content");
+
+  // Get contents
+  $savana("div.n1").content("html");
+  $savana("div.n2").content("text");
+  $savana("input").content("val");
+
+  savana.endTime(start_time);
+
+});
+
+</script>
+</head>
+<body>
+
+  <div>
+
+    <div class="n1">
+      
+    </div>
+
+    <div class="n2">
+      
+    </div>
+
+    <input>
+
+  </div>
+
+</body>
+</html>

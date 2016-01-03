@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Users</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href='//fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="../Skeleton-2.0.4/css/normalize.css">
+  <link rel="stylesheet" href="../Skeleton-2.0.4/css/skeleton.css">
+  <link rel="stylesheet" href="../Skeleton-2.0.4/css/custom.css">
+
+  <!-- SAVANA JS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="/lib/css/animate.min.css">
+  <link rel="stylesheet" href="/lib/css/savana.css">
+  <script src="/lib/js/savana.js"></script> 
+
+  <script src="Users.js"></script>
+</head>
+<body>
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="section hero sjs-router sjs-list-users">
+    <div class="container">
+      <div class="row"> 
+         <h1>Savana <b>MVR</b> - Welcome <span class="name-user"></span></h1>
+      </div>
+      <div class="row"> 
+          <h5>Whats your name?</h5>
+            <form id="box-output">
+              <div class="row">
+                <div class="columns">
+                  <input class="u-full-width sjs-output" rel="name-user" type="text" placeholder="" >
+                </div>
+              </div>
+            </form>       
+      </div>
+      <div class="row"> 
+         <div class="six columns">
+            <h5>User</h5>
+             <form name="saveUser" id="saveUser" method="POST" action="">
+              <div class="row">
+                <div class="six columns">
+                  <label for="name">Id</label>
+                  <input class="u-full-width id" type="text" placeholder="" name="id" id="id">
+                </div>
+              </div>
+              <div class="row">
+                <div class="six columns">
+                  <label for="name">Your name</label>
+                  <input class="u-full-width" type="text" placeholder="" name="name" id="name">
+                </div>
+                <div class="six columns">
+                  <label for="exampleRecipientInput">Gender</label>
+                  <select class="u-full-width" name="gender" id="gender">
+                    <option value="M">Male</option>
+                    <option value="F">Fame</option>
+                  </select>
+                </div>
+              </div>
+              <label for="exampleMessage">Messagem</label>
+              <textarea class="u-full-width msg" name="msg" placeholder="Hi Dave …" id="msg"></textarea>
+              <label class="example-send-yourself-copy">
+                <input type="checkbox" id="active" class="active" name="active" value="true">
+                <span class="label-body">Active</span>
+              </label>
+              <input class="button-primary" type="submit" value="Save">
+            </form>
+        </div>
+        <div class="six columns">
+            <h5>Edit User</h5>
+             <form name="editUser" id="editUser" method="POST" action="">
+              <div class="row">
+                <div class="six columns">
+                  <label for="name">Id</label>
+                  <input class="u-full-width id" type="text" placeholder="" name="id" id="id" disabled="disabled">
+                </div>
+              </div>
+              <div class="row">
+                <div class="six columns">
+                  <label for="name">Your name</label>
+                  <input class="u-full-width" type="text" placeholder="" name="name" id="name">
+                </div>
+                <div class="six columns">
+                  <label for="exampleRecipientInput">Gender</label>
+                  <select class="u-full-width" name="gender" id="gender">
+                    <option value="M">Male</option>
+                    <option value="F">Fame</option>
+                  </select>
+                </div>
+              </div>
+              <label for="exampleMessage">Messagem</label>
+              <textarea class="u-full-width msg" name="msg" placeholder="Hi Dave …" id="msg"></textarea>
+              <label class="example-send-yourself-copy">
+                <input type="checkbox" id="active" class="active" name="active" value="true">
+                <span class="label-body">Active</span>
+              </label>
+              <input class="button-primary" type="submit" value="Save">
+            </form>
+        </div>  
+      </div>
+      <div class="row">
+          <div class="six columns search-users">
+            <h5>Search users</h5>
+            <form id="searchUsers">
+              <div class="row">
+                <div class="columns">
+                  <input class="u-full-width search-users" type="text" placeholder="" id="name" >
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <div id="listUsers" class="six columns">
+            <h5>Lista de usuario (<span class="sjs-total-rows">0</span>)</h5>
+             <table class='u-full-width list'>
+                 <thead>
+                    <tr>
+                      <th>Active</th>
+                      <th>Name</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody id="list-users-tpl" class="list">
+                 
+                 </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>

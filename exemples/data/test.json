@@ -1,0 +1,5 @@
+{"users":[
+    {"id":"1","name":"John", "gender":"M", "msg":"teste1", "active": "true"},
+    {"id":"2","name":"Daniel", "gender":"M","msg":"teste2", "active": "true"},
+    {"id":"3","name":"Maria", "gender":"F","msg":"teste3", "active": "true"}
+]}

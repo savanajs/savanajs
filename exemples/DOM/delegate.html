@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Savana | Delegate</title>
+  <link rel="stylesheet" href="/lib/css/animate.min.css">
+  <link rel="stylesheet" href="/lib/css/savana.css">
+  <script src="/lib/js/savana.js"></script> 
+  <script type="text/javascript" src="https://getfirebug.com/firebug-lite.js"></script>
+<script>
+
+$savana(document).done(function(e) {
+
+  var start_time = savana.time();
+
+  // Events (click, hover, change, keyup, etc)
+  $savana("body").delegate("click", "a", function(){
+    alert(1541564156)
+    console.log($savana(_this).content("text")); // Reference to $savana("a")
+    event.preventDefault();
+  })
+
+  savana.endTime(start_time);
+
+});
+
+</script>
+</head>
+<body>
+
+<a href="#">Click</a>
+
+</body>
+</html>

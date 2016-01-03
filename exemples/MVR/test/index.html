@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Helpertools | Plugin</title>
+  <link rel="stylesheet" href="/lib/css/animate.min.css">
+  <link rel="stylesheet" href="/lib/css/savana.css">
+  <script src="/lib/js/savana.js"></script> 
+  <script src="Users.js"></script> 
+</head>
+<body>
+
+  <input type="checkbox" class="check" checked="checked">
+
+<div class="alert-box error"><span>Erro: </span>Write your error message here.</div>
+<div class="alert-box success"><span>Sucesso: </span>Write your success message here.</div>
+<div class="alert-box warning"><span>Atenção: </span>Write your warning message here.</div>
+<div class="alert-box notice"><span>Noticia: </span>Write your notice message here.</div>
+
+<form id='sampleform-edit' method='post' action='' >
+   <h3>Editar</h3>
+   <p class="s">
+   ID: <input type='text' name='id' disabled="disabled" />
+   </p>
+   <p>
+   Name: <input type='text' name='firstName'  />
+   </p>
+   <p>
+   Lastname: <input type='text' name='lastName'  />
+   </p>
+   <p class="output_name">
+
+   </p>
+   <p>
+   <input type='submit' name='Submit' value='Salvar' />
+   </p>
+</form>
+
+<hr />
+
+<form id='sampleform-user' method='post' action='' >
+   <h3>Usuario</h3>
+   <p class="s" id="m">
+   ID: <input type='text' name='id'  />
+   </p>
+   <p>
+   Name: <input type='text' name='firstName'  />
+   </p>
+   <p>
+   Lastname: <input type='text' name='lastName'  />
+   </p>
+   <p class="output_name">
+
+   </p>
+   <p>
+   <input type='submit' name='Submit' value='Salvar' />
+   </p>
+   <input type='submit' name='Submit' value='oi' />
+</form>
+
+<form id='sampleform' method='post' action='' >
+   <h1>Buscar</h1>
+   <p>
+   <input type='text' name='Name' class='search' />
+   </p>
+   </p>
+</form>
+
+<div id="list-user"></div>
+
+<a href="#list-user/30/raf" id="linkuser">List user</a>
+
+</body>
+</html>

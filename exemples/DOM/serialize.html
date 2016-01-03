@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Savana | Serialize</title>
+  <link rel="stylesheet" href="/lib/css/animate.min.css">
+  <link rel="stylesheet" href="/lib/css/savana.css">
+  <script src="/lib/js/savana.js"></script> 
+<script>
+
+$savana(document).done(function(e) {
+
+  var start_time = savana.time();
+
+  // Pega os valores e nomes de campos de formularios automaticamenete
+  var inputs = $savana("form").serialize(true);
+
+  console.log(inputs)
+
+  savana.endTime(start_time);
+
+});
+
+</script>
+</head>
+<body>
+
+    <!-- DADOS PESSOAIS-->
+<form id="form-exemplo" action="Script_do_Formulario.php" method="post">
+<fieldset>
+ <legend>Dados Pessoais</legend>
+ <table cellspacing="10">
+  <tr>
+   <td>
+    <label for="email">Email: </label>
+   </td>
+   <td align="left">
+    <input type="text" name="email" id="email" class="">
+   </td>
+   <td>
+    <label for="nome">Nome: </label>
+   </td>
+   <td align="left">
+    <input type="text" name="nome" id="nome" class="ht-required ht-valid-name-and-lastname ht-valid-letter ht-mask-letters">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <label for="data">Nascimento: </label>
+   </td>
+   <td align="left">
+    <input type="text" name="data" class="ht-mask-date"> 
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <label for="rg">RG: </label>
+   </td>
+   <td align="left">
+    <input type="text" name="rg" size="13" maxlength="13" class="ht-mask-rg"> 
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <label for="cpf">CPF:</label>
+   </td>
+   <td align="left">
+    <input type="text" name="cpf" id="cpf" class="ht-mask-cpf ht-valid-cpf ht-required">
+   </td>
+  </tr>
+   <tr>
+   <td>
+    <label for="cnpj">CNPJ:</label>
+   </td>
+   <td align="left">
+    <input type="text" name="cnpj" id="cnpj" class="ht-mask-cnpj">
+   </td>
+  </tr>
+  </tr>
+   <tr>
+   <td>
+    <label for="phone">Phone:</label>
+   </td>
+   <td align="left">
+    <input type="text" name="phone" id="phone" class="ht-mask-phone">
+   </td>
+  </tr>
+ </table>
+</fieldset>
+
+<br />
+<!-- ENDEREÇO -->
+<fieldset>
+ <legend>Dados de Endereço</legend>
+ <table cellspacing="10">
+
+  <tr>
+   <td>
+    <label for="rua">Rua:</label>
+   </td>
+   <td align="left">
+    <input type="text" name="rua">
+   </td>
+   <td>
+    <label for="numero">Numero:</label>
+   </td>
+   <td align="left">
+    <input type="text" id="numero" name="numero" class="ht-mask-number">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <label for="bairro">Bairro: </label>
+   </td>
+   <td align="left">
+    <input type="text" class="ht-mask-letters" name="bairro">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <label for="estado">Estado:</label>
+   </td>
+   <td align="left">
+    <select name="estado"> 
+    <option value="ac">Acre</option> 
+    <option value="al">Alagoas</option> 
+    <option value="am">Amazonas</option> 
+    <option value="ap">Amapá</option> 
+    <option value="ba">Bahia</option> 
+    <option value="ce">Ceará</option> 
+    <option value="df">Distrito Federal</option> 
+    <option value="es">Espírito Santo</option> 
+    <option value="go">Goiás</option> 
+    <option value="ma">Maranhão</option> 
+    <option value="mt">Mato Grosso</option> 
+    <option value="ms">Mato Grosso do Sul</option> 
+    <option value="mg">Minas Gerais</option> 
+    <option value="pa">Pará</option> 
+    <option value="pb">Paraíba</option> 
+    <option value="pr">Paraná</option> 
+    <option value="pe">Pernambuco</option> 
+    <option value="pi">Piauí</option> 
+    <option value="rj">Rio de Janeiro</option> 
+    <option value="rn">Rio Grande do Norte</option> 
+    <option value="ro">Rondônia</option> 
+    <option value="rs">Rio Grande do Sul</option> 
+    <option value="rr">Roraima</option> 
+    <option value="sc">Santa Catarina</option> 
+    <option value="se">Sergipe</option> 
+    <option value="sp">São Paulo</option> 
+    <option value="to">Tocantins</option> 
+   </select>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <label for="cidade">Cidade: </label>
+   </td>
+   <td align="left">
+    <input type="text" name="cidade">
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <label for="cep">CEP: </label>
+   </td>
+   <td align="left">
+    <input type="text" name="cep" class="ht-mask-cep" >
+   </td>
+  </tr>
+ </table>
+</fieldset>
+</form>
+</body>
+</html>

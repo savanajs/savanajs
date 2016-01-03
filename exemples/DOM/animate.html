@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Savana | Animate</title>
+  <link rel="stylesheet" href="/lib/css/animate.min.css">
+  <link rel="stylesheet" href="/lib/css/savana.css">
+  <script src="/lib/js/savana.js"></script> 
+<script>
+
+$savana(document).done(function(e) {
+
+  var start_time = savana.time();
+
+  // Insert animation css in element
+  // Plugin CSS by Daniel Eden - https://daneden.github.io/animate.css/
+
+  /*Efeitos:
+            bounce, flash, pulse, rubberBand, shake, swing, tada, wobble, jello
+            bounceIn, bounceInDown, bounceInLeft, bounceInRight, bounceInUp, bounceOut
+            bounceOutDown, bounceOutLeft, bounceOutRight, bounceOutUp, fadeIn, fadeInDown
+            fadeInDownBig, fadeInLeft, fadeInLeftBig, fadeInRight, fadeInRightBig, fadeInUp
+            fadeInUpBig, fadeOut, fadeOutDown, fadeOutDownBig, fadeOutLeft, fadeOutLeftBig
+            fadeOutRight, fadeOutRightBig, fadeOutUp, fadeOutUpBig, flipInX, flipInY
+            flipOutX, flipOutY, lightSpeedIn, lightSpeedOut, rotateIn, rotateInDownLeft
+            rotateInDownRight, rotateInUpLeft, rotateInUpRight, rotateOut, rotateOutDownLeft
+            rotateOutDownRight, rotateOutUpLeft, rotateOutUpRight, hinge, rollIn, rollOut
+            zoomIn, zoomInDown, zoomInLeft, zoomInRight, zoomInUp, zoomOut, zoomOutDown
+            zoomOutLeft, zoomOutRight, zoomOutUp, slideInDown, slideInLeft, slideInRight
+            slideInUp, slideOutDown, slideOutLeft, slideOutRight, slideOutUp
+  */
+
+  $savana(".n1").animate("fadeIn");  
+
+  savana.endTime(start_time);
+
+});
+
+</script>
+</head>
+<body>
+
+  <div>
+
+    <div class="n1" rel="test">
+      test
+    </div>
+
+  </div>
+
+</body>
+</html>
