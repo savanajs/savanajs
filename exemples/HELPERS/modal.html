@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>Savana | message Box</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="../../lib/css/animate.min.css">
   <link rel="stylesheet" href="../../lib/css/savana.css">
   <script src="../../lib/js/savana.js"></script> 
@@ -10,19 +11,30 @@
 
 $savana(document).done(function(e) {
 
-  savana.modal(".modal-teste","open");
+  var modalTeste = savana.modalLoad(".modal-test");
+  var modalTeste2 = savana.modalLoad(".modal-test2");
+  savana.modalOpen(modalTeste2);
 
 });
 
 </script>
 </head>
-<body>
+<body style="background: #ccc">
 
-	<div class="sjs-modal-hide modal-teste">
+	<div class="sjs-modal-hide modal-test">
 		<div class="sjs-modal-content">
-			teste...
+			Content test 1
 		</div>
 	</div>
+
+  <div class="sjs-modal-hide modal-test2">
+    <div class="sjs-modal-content">
+      Content test 2
+    </div>
+  </div>
+
+  <p><a href="#" class="sjs-modal-open" rel=".modal-test" title="">Modal test 1</a></p>
+  <p><a href="#" class="sjs-modal-open" rel=".modal-test2" title="">Modal test 2</a></p>
 
 </body>
 </html>
