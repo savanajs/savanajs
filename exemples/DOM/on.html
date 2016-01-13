@@ -4,10 +4,10 @@
 <head>
   <meta charset="utf-8">
   <title>Savana | On</title>
-  <link rel="stylesheet" href="/lib/css/animate.min.css">
-  <link rel="stylesheet" href="/lib/css/savana.css">
-  <script src="/lib/js/savana.js"></script> 
-  <script type="text/javascript" src="https://getfirebug.com/firebug-lite.js"></script>
+  <link rel="stylesheet" href="../../lib/css/animate.min.css">
+  <link rel="stylesheet" href="../../lib/css/savana.css">
+  <script src="../../lib/js/savana.js"></script> 
+  <script src="../../lib/js/addEventListener-IE.js"></script> 
 <script>
 
 $savana(document).done(function(e) {
@@ -16,8 +16,7 @@ $savana(document).done(function(e) {
 
   // Events (click, hover, change, keyup, etc)
   $savana("a").on("click", function(e){
-    alert(1)
-    console.log($savana(_this).content("text")); // Reference to $savana("a")
+     alert($savana(_this).content("text")); // Reference to $savana("a")
   })
 
   savana.endTime(start_time);

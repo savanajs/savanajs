@@ -15,11 +15,10 @@ $savana(document).done(function(e) {
 
   var start_time = savana.time();
   // Events (click, hover, change, keyup, etc)
-  $savana("body").delegate("click", "a", function(){
-    alert(1541564156)
+  $savana("body").delegate("click", "a", function(e){
     console.log($savana(_this).content("text")); // Reference to $savana("a")
-    window.event.preventDefault();
-  })
+    e.preventDefault();
+  });
 
   savana.endTime(start_time);
 
