@@ -65,6 +65,7 @@ div.sjs-modal-bg {
   -moz-border-radius: 5px 5px 5px 5px;
   -webkit-border-radius: 5px 5px 5px 5px;
   overflow: hidden;
+  border: 1px solid #e5e5e5;
 }
 
 .ht-popup * {
