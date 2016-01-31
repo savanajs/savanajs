@@ -14,8 +14,8 @@ $savana(document).done(function(e) {
 
   // Events (click, hover, change, keyup, etc)
   $savana("a").on("click", function(e){
-     alert($savana(self).content("text")); // Reference to $savana("a")
-     e.preventDefault();
+     alert($savana(this).content("text")); // Reference to $savana("a")
+     savana.eventStop();
   })
 
 });

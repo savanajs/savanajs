@@ -11,7 +11,8 @@
 $savana(document).done(function(e) {
   // Literar elements
   $savana("ul").find("li").each(function(e){
-    console.log($savana(self).content("text")); 
+    var $this = $savana(this);
+    console.log($this.content("text"))
   })
 
 });
