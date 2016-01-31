@@ -12,22 +12,17 @@
 <script>
 
 $savana(document).done(function(e) {
-
-  var start_time = savana.time();
   // Events (click, hover, change, keyup, etc)
   $savana("body").delegate("click", "a", function(e){
-    console.log($savana(_this).content("text")); // Reference to $savana("a")
+    alert($savana(self).content("text")); // Reference to $savana("a")
     e.preventDefault();
   });
-
-  savana.endTime(start_time);
-
 });
 
 </script>
 </head>
 <body>
-
+<p>To better see this method open the source code and the browser console</p>
 <a href="#">Click</a>
 
 </body>

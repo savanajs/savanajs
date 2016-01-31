@@ -10,20 +10,16 @@
 
 $savana(document).done(function(e) {
 
-  var start_time = savana.time();
-
   // Add elements after or before of others elements
   $savana("ul").insert("<div class='after'>After</div>","after");
   $savana("ul").insert("<div class='before'>Before</div>","before");
-
-  savana.endTime(start_time);
 
 });
 
 </script>
 </head>
 <body>
-
+<p>To better see this method open the source code and the browser console</p>
 <ul>
     <li>1</li>
     <li>2</li>

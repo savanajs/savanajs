@@ -10,21 +10,16 @@
 
 $savana(document).done(function(e) {
 
-  var start_time = savana.time();
-
   // Pega os valores e nomes de campos de formularios automaticamenete
   var inputs = $savana("form").serialize(true);
-
   console.log(inputs)
-
-  savana.endTime(start_time);
 
 });
 
 </script>
 </head>
 <body>
-
+<p>To better see this method open the source code and the browser console</p>
     <!-- DADOS PESSOAIS-->
 <form id="form-exemplo" action="Script_do_Formulario.php" method="post">
 <fieldset>

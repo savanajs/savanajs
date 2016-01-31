@@ -6,12 +6,9 @@
   <link rel="stylesheet" href="../../lib/css/animate.min.css">
   <link rel="stylesheet" href="../../lib/css/savana.css">
   <script src="../../lib/js/savana.js"></script> 
-  <script type="text/javascript" src="https://getfirebug.com/firebug-lite.js"></script>
 <script>
 
 $savana(document).done(function(e) {
-
-  var start_time = savana.time();
 
   // Insert attribute
   $savana("div.n1").attr("rel","teste");
@@ -19,14 +16,12 @@ $savana(document).done(function(e) {
   // Get attribute
   $savana("div.n1").attr("rel");
 
-  savana.endTime(start_time);
-
 });
 
 </script>
 </head>
 <body>
-
+<p>To better see this method open the source code and the browser console</p>
   <div>
 
     <div class="n1">

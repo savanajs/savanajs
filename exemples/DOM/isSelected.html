@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Savana | Checked</title>
+  <title>Savana | isSelected</title>
   <link rel="stylesheet" href="../../lib/css/animate.min.css">
   <link rel="stylesheet" href="../../lib/css/savana.css">
   <script src="../../lib/js/savana.js"></script> 
@@ -11,7 +11,7 @@
 $savana(document).done(function(e) {
 
   // Verificar se um input radio ou checkbox esta clicado
-  if($savana("form #nome").isChecked()){
+  if($savana("form select#nome").isSelected()){
       alert(true)
   }else{
       alert(false)
@@ -39,7 +39,10 @@ $savana(document).done(function(e) {
     <label for="nome">Nome: </label>
    </td>
    <td align="left">
-    <input type="checkbox" name="nome" id="nome" checked="checked">
+    <select id="nome" name="nome">
+      <option value="">Choose</option>
+      <option value="John" >John</option>
+    </select>
    </td>
   </tr>
  </table>

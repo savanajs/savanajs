@@ -10,8 +10,6 @@
 
 $savana(document).done(function(e) {
 
-  var start_time = savana.time();
-
   // Add class or remove class in elements
   if($savana("ul li").eq(0).hasClass("lista-nova")){
     alert("Exists class!")
@@ -19,14 +17,12 @@ $savana(document).done(function(e) {
     alert("Not exists class!")
   }
 
-  savana.endTime(start_time);
-
 });
 
 </script>
 </head>
 <body>
-
+<p>To better see this method open the source code and the browser console</p>
 <ul>
     <li class="lista-nova">1</li>
     <li>2</li>

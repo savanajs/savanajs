@@ -9,22 +9,17 @@
 <script>
 
 $savana(document).done(function(e) {
-
-  var start_time = savana.time();
-
   // Literar elements
   $savana("ul").find("li").each(function(e){
     console.log($savana(self).content("text")); 
   })
-
-  savana.endTime(start_time);
 
 });
 
 </script>
 </head>
 <body>
-
+<p>To better see this method open the source code and the browser console</p>
 <ul>
     <li>1</li>
     <li>2</li>

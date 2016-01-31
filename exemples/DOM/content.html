@@ -10,8 +10,6 @@
 
 $savana(document).done(function(e) {
 
-  var start_time = savana.time();
-
   // Insert content
   $savana("div.n1").content("html","<b>Content HTML....</b>");
   $savana("div.n2").content("text","Text content");
@@ -22,14 +20,12 @@ $savana(document).done(function(e) {
   $savana("div.n2").content("text");
   $savana("input").content("val");
 
-  savana.endTime(start_time);
-
 });
 
 </script>
 </head>
 <body>
-
+<p>To better see this method open the source code and the browser console</p>
   <div>
 
     <div class="n1">

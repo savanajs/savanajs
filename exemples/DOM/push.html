@@ -10,20 +10,16 @@
 
 $savana(document).done(function(e) {
 
-  var start_time = savana.time();
-
   // Add elements inside of others elements
   $savana("ul").push("<li class='after'>After</li>","after");
   $savana("ul").push("<li class='before'>Before</li>","before");
-
-  savana.endTime(start_time);
-
+  
 });
 
 </script>
 </head>
 <body>
-
+<p>To better see this method open the source code and the browser console</p>
 <ul>
     <li>1</li>
     <li>2</li>
