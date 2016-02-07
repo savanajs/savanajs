@@ -19,6 +19,16 @@ gulp.task('scripts', function(){
 
 });
 
+gulp.task('scripts2', function(){
+
+ return gulp.src(['./lib/js/addEventListener-IE.js'])
+        .pipe(concat('addEventListener-IE.min.js'))
+	    .pipe(uglify())
+	    .pipe(gulp.dest('./lib/js/'))
+	    .pipe(connect.reload());
+	   
+});
+
 gulp.task('css', function(){
 
  return gulp.src(['./lib/css/savana.css'])
@@ -30,8 +40,8 @@ gulp.task('css', function(){
 });
 
 gulp.task('watch', function(){ //gulp watch
-    	gulp.watch('./arquivos/gulp/js/*.js', ['scripts','css']);
+    	gulp.watch('./arquivos/gulp/js/*.js', ['scripts','scripts2','css']);
 });
 
-gulp.task('default', ['css','scripts','watch']);
+gulp.task('default', ['css','scripts','scripts2','watch']);
 
