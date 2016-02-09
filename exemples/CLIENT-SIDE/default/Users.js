@@ -1,16 +1,5 @@
 $savana(document).done(function(e) {
 
-    var template = {
-        init: function(target, tpl, obj){
-
-            if(!tpl || !obj) return;
-            var template = $savana(tpl).content("html");
-            var rendered = Mustache.render(template, obj);
-            $savana(target).content("html", rendered);
-
-        }
-    }
-
     var modelUsers = savana.Model({
 
         configs: {
@@ -40,10 +29,10 @@ $savana(document).done(function(e) {
 
     var userView = savana.View({
         parent: "div#listUsers",
-        target: "#list-users-tpl",
-        tpl: "#users-template",
+        child: ".list",
+        
         init: function(scope, json) {
-     
+
             scope.search(scope, json);
             scope.insert(scope, json);
             scope.update(scope, json);
@@ -54,9 +43,13 @@ $savana(document).done(function(e) {
         build: function(scope, model) {
 
             var user, content = "";
-            console.log(model)
-            console.log({"users": model});
-            template.init(scope.target, scope.tpl, {"users": model});
+
+            for (key in model) {
+                user = model[key];
+                content += "<tr><td>"+user.active+"</td><td>"+user.name+"</td><td><a href='#' rel='" + user.id + "' class='edit'>Editar</a> - <a href='#' rel='" + user.id + "' class='del'>Excluir</a></td></tr>";
+            }
+
+            savana.render(scope, content, model);
             scope.always(scope, model);
             scope.delete(scope, model);
 
@@ -66,8 +59,8 @@ $savana(document).done(function(e) {
 
             $savana("form#saveUser").on("submit", function(e) {
 
-                var foms_input = $savana(_this).serialize(true);
-                $savana(_this).clearForm();
+                var foms_input = $savana(this).serialize(true);
+                $savana(this).clearForm();
                 savana.modelInsert(scope, json, foms_input, function(model) {
                     json = savana.modelOrderBy(model, "name", "asc");
                     scope.build(scope, json);
@@ -81,9 +74,9 @@ $savana(document).done(function(e) {
         delete: function(scope, json) {
 
             $savana(scope.parent + " a.del").on("click", function(e) {
-                var model_upt = savana.modelDelete(json, "id", $savana(_this).attr("rel"));
-                //json = savana.modelOrderBy(model_upt, "name", "asc");
-                scope.build(scope, model_upt);
+                var model_upt = savana.modelDelete(json, "id", $savana(this).attr("rel"));
+                json = savana.modelOrderBy(model_upt, "name", "asc");
+                scope.build(scope, json);
                 e.preventDefault();
             });
 
@@ -92,7 +85,7 @@ $savana(document).done(function(e) {
         always: function(scope, json) {
 
             $savana(scope.parent + " a.edit").on("click", function(e) {
-                savana.setValuesInForm("form#editUser", json, "id", $savana(_this).attr("rel"));
+                savana.setValuesInForm("form#editUser", json, "id", $savana(this).attr("rel"));
                 e.preventDefault();
             });
 
@@ -102,8 +95,8 @@ $savana(document).done(function(e) {
 
             $savana("form#editUser").on("submit", function(e) {
 
-                var foms_input = $savana(_this).serialize(true);
-                $savana(_this).clearForm();
+                var foms_input = $savana(this).serialize(true);
+                $savana(this).clearForm();
                 savana.modelUpdate(scope, json, foms_input, "id", function(model) {
                     json = savana.modelOrderBy(model, "name", "asc");
                     scope.build(scope, json);
@@ -117,7 +110,7 @@ $savana(document).done(function(e) {
         search: function(scope, json) {
 
             $savana("input.search-users").on("keyup", function(e) {
-                var newModel = savana.modelSearch($savana(_this), json, "name");
+                var newModel = savana.modelSearch($savana(this), json, "name");
                 scope.build(scope, newModel);
             });
 
@@ -129,26 +122,12 @@ $savana(document).done(function(e) {
 
         router: {
                   listUser:{
-                    name:"list-users", 
-                    linkid:"#linkuser",
-                    async: "list-user.html"
-                  },
-                  listUser2:{
-                    name:"list-users2", 
-                    linkid:"#linkuser2",
-                    async: "list-user2.html"
-                  },
+                    name:"list-users", // Hash na url - http://localhost/exemples/CLIENT-SIDE/default/#list-users
+                  }
         },
 
         init: function(scope) {
             savana.loadRouter(scope, scope.router.listUser, function(params) {
-                modelUsers.getUsers(modelUsers, function(resp){
-                    userView.init(userView, resp);
-                    userView.build(userView, resp);
-                });
-            });
-
-            savana.loadRouter(scope, scope.router.listUser2, function(params) {
                 modelUsers.getUsers(modelUsers, function(resp){
                     userView.init(userView, resp);
                     userView.build(userView, resp);
