@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Savana | CountDown</title>
+  <link rel="stylesheet" href="../../lib/css/animate.min.css">
+  <link rel="stylesheet" href="../../lib/css/savana.css">
+  <script src="../../lib/js/savana.js"></script> 
+
+<style>
+
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .clock {
+        position: absolute; 
+        top: 0; 
+        right: 0; 
+        bottom: 0; 
+        left: 0; 
+        margin: auto; 
+        width: 290px; 
+        height: 91px; 
+        background: #000; 
+        color: #fff; 
+        padding: 30px; 
+        line-height: 30px; 
+        font-size: 48px;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+</style>
+
+<script>
+
+    $savana(document).done(function() {
+                
+        $savana('.clock').countDown({
+            date: '30/05/2016',
+            // hours: 16,
+            // minutes: 20
+        });
+
+    });
+
+</script>
+</head>
+<body>
+  
+    <div class="clock"></div>
+  
+</body>
+</html>
