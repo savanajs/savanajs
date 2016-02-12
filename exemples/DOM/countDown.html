@@ -1,57 +1,71 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <title>Savana | CountDown</title>
-  <link rel="stylesheet" href="../../lib/css/animate.min.css">
-  <link rel="stylesheet" href="../../lib/css/savana.css">
-  <script src="../../lib/js/savana.js"></script> 
+    <head>
 
-<style>
+        <meta charset="utf-8">
+        <title>Savana | CountDown</title>
+        <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css' />
+        <link rel="stylesheet" href="../../lib/css/animate.min.css" />
+        <link rel="stylesheet" href="../../lib/css/savana.css" />
+        <script src="../../lib/js/savana.js"></script> 
 
-    * {
-        margin: 0;
-        padding: 0;
-    }
+        <style>
 
-    .clock {
-        position: absolute; 
-        top: 0; 
-        right: 0; 
-        bottom: 0; 
-        left: 0; 
-        margin: auto; 
-        width: 290px; 
-        height: 91px; 
-        background: #000; 
-        color: #fff; 
-        padding: 30px; 
-        line-height: 30px; 
-        font-size: 48px;
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        box-sizing: border-box;
-    }
+            * {
+                margin: 0;
+                padding: 0;
+            }
 
-</style>
+            .clock {
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                -webkit-transform: translate(-50%, -50%);
+                -moz-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+                font-family: "Roboto", sans-serif;
+                font-weight: bold;
+                background: #000;
+                color: #fff;
+                padding: 10px;
+                display: none;
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                box-sizing: border-box;
+            }
+            .clock > div { display: inline-block; }
+            .js-number,
+            .js-label { 
+                display: block; 
+                text-align: center;
+            }
+            .js-number { font-size: 36px; }
+            .js-label {
+                font-size: 10px;
+                text-transform: uppercase;
+            }
+            .js-divider {
+                display: inline-block;
+                vertical-align: top;
+                font-size: 32px;
+                line-height: 36px;
+            }
 
-<script>
+        </style>
 
-    $savana(document).done(function() {
-                
-        $savana('.clock').countDown({
-            date: '30/05/2016',
-            // hours: 16,
-            // minutes: 20
-        });
+        <script>
+            
+            $savana(document).done(function() {
+                $savana('.clock').countDown('25/11/2016', '00:00');
+            });
 
-    });
+        </script>
 
-</script>
-</head>
-<body>
-  
-    <div class="clock"></div>
-  
-</body>
+    </head>
+    
+    <body>
+
+        <div class="clock"></div>
+    
+    </body>
 </html>
