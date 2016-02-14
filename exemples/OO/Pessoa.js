@@ -1,4 +1,4 @@
-var Mamifero = $ObjectJS.Class(function(){
+var Mamifero = $SavanaObj.Create(function(){
 
   this.olhos = "Preto"; // this -> public
   this.pelo = "castalho"; // this -> public
@@ -17,7 +17,7 @@ var Mamifero = $ObjectJS.Class(function(){
 
 });
 
-var Pessoa = $ObjectJS.Class(function(){
+var Pessoa = $SavanaObj.Create(function(){
 
   this.name = "Rafael"; // this -> public
   this.idade = "30";    
