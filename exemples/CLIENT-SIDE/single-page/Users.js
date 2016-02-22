@@ -3,15 +3,33 @@ $savana(document).done(function(e) {
     var modelUsers = savana.Model({
 
         configs: {
-           listUsers: {
+           getUsers: {
                 'url': '/exemples/data/test.json',
-                'method': 'GET',
+                'method':'GET',
                 'type': 'json'
-            }
+            },
+            setUser: {
+                'url': '/exemples/data/setUser.php',
+                'method':'POST',
+                'type': 'json',
+                'data':'',
+            },
+            uptUser: {
+                'url': '/exemples/data/uptUser.php',
+                'method':'POST',
+                'type': 'json',
+                'data':'',
+            },
+            delUser: {
+                'url': '/exemples/data/delUser.php',
+                'method':'POST',
+                'type': 'json',
+                'data':'',
+            },
         },
 
         getUsers: function(scope, fn) {
-            var promise = savana.async(scope.configs.listUsers);
+            var promise = savana.async(scope.configs.getUsers);
             promise.then(function(response) {
                 var json = savana.modelOrderBy(response.users, "name", "asc");  // Order by
                 fn(json);
@@ -21,8 +39,15 @@ $savana(document).done(function(e) {
             return scope;
         },
 
-        setUsers: function(scope) {
-
+        setUsers: function(scope, data, fn) {
+            scope.configs.setUsers.data = data;
+            var promise = savana.async(scope.configs.setUsers);
+            promise.then(function(response) {
+                fn(response);
+            }).catch(function(err) {
+                savana.debug(err, "error");
+            });
+            return scope;
         }
 
     });
@@ -32,12 +57,13 @@ $savana(document).done(function(e) {
         parent: "div#listUsers",
         child: "#list-users-tpl",
 
-        init: function(scope, json) {
+        init: function(scope, json) {    
 
             scope.search(scope, json);
             scope.insert(scope, json);
             scope.update(scope, json);
-            savana.output();
+            scope.build(scope, json);
+            savana.output();                     
 
         },
 
@@ -47,6 +73,7 @@ $savana(document).done(function(e) {
 
             for (key in model) {
                 user = model[key];
+                user.active = (user.active) ? true : false;
                 content += "<tr><td>"+user.active+"</td><td>"+user.name+"</td><td><a href='#' rel='" + user.id + "' class='edit'>Editar</a> - <a href='#' rel='" + user.id + "' class='del'>Excluir</a></td></tr>";
             }
 
@@ -138,14 +165,12 @@ $savana(document).done(function(e) {
             savana.loadRouter(scope, scope.router.listUser, function(params) {
                 modelUsers.getUsers(modelUsers, function(resp){
                     userView.init(userView, resp);
-                    userView.build(userView, resp);
                 });
             });
 
             savana.loadRouter(scope, scope.router.listUser2, function(params) {
                 modelUsers.getUsers(modelUsers, function(resp){
                     userView.init(userView, resp);
-                    userView.build(userView, resp);
                 });
             });
         }

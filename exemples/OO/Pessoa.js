@@ -1,27 +1,27 @@
-var Mamifero = $SavanaObj.Create(function(){
+var Mammal = SavanaObject.Create(function(){
 
-  this.olhos = "Preto"; // this -> public
-  this.pelo = "castalho"; // this -> public
+  this.eyes = "Preto"; // this -> public
+  this.fur = "castalho"; // this -> public
 
   this._init(function(){ // Initialization
  
   });
 
-  this.andar = function(){ // Method public
-  	alert("andando")
+  this.walk = function(){ // Method public
+  	alert("Walking")
   }
 
-  this.falar = function(){ // Method public
-  	alert("falando")
+  this.speak = function(){ // Method public
+  	alert("Speaking")
   }
 
 });
 
-var Pessoa = $SavanaObj.Create(function(){
+var Person = SavanaObject.Create(function(){
 
   this.name = "Rafael"; // this -> public
-  this.idade = "30";    
-  var _senha = 12345678 // private with(_variable)
+  this.age = 30;    
+  var _password = 12345678 // private with(_variable)
 
   this._init(function(){ // Constructor
   	_methodPrivate();
@@ -31,13 +31,19 @@ var Pessoa = $SavanaObj.Create(function(){
   	alert("methodPublic")
   }
 
-  function _methodPrivate(){ // Method private with(_fun)
-  	alert("methodPrivate")
+  this.showPassword = function(){
+     alert(_password);
   }
 
-}, Mamifero); // Extend
+  function _methodPrivate(){ // Method private with(_fun)
+  	alert("methodPrivate");
+  }
 
-console.log(Mamifero)
-console.log(Pessoa)
-Pessoa.methodPublic();
-Pessoa.andar();
+}, Mammal); // Extend
+
+console.log(Mammal)
+console.log(Person)
+Person.methodPublic();
+Person.walk();
+alert(Person._password); // Undefined
+Person.showPassword();

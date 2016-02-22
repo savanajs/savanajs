@@ -47,6 +47,7 @@ $savana(document).done(function(e) {
             scope.search(scope, json);
             scope.insert(scope, json);
             scope.update(scope, json);
+            scope.build(scope, json);
             savana.output();
 
         },
@@ -144,14 +145,12 @@ $savana(document).done(function(e) {
             savana.loadRouter(scope, scope.router.listUser, function(params) {
                 modelUsers.getUsers(modelUsers, function(resp){
                     userView.init(userView, resp);
-                    userView.build(userView, resp);
                 });
             });
 
             savana.loadRouter(scope, scope.router.listUser2, function(params) {
                 modelUsers.getUsers(modelUsers, function(resp){
                     userView.init(userView, resp);
-                    userView.build(userView, resp);
                 });
             });
         }
