@@ -4,7 +4,6 @@
 ### Insert:
 ```
 <script src="lib/js/savana.min.js"></script>
-<link href="lib/css/animate.min.css" rel="stylesheet">
 <link href="lib/css/savana.min.css" rel="stylesheet">
 ```
 ### Use:
