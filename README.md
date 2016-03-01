@@ -13,7 +13,7 @@ $savana(document).done(function(e) {
   Your code here ...   
 });
 ```
-### Use:
+### Sumary:
 ```
 /*
  * Sumary
