@@ -1,19 +1,19 @@
 # SavanaJS
-### Build wildest web applications with Savana.js
+## Build wildest web applications with Savana.js
 
-##Insert:
+### Insert:
 ```
 <script src="lib/js/savana.min.js"></script>
 <link href="lib/css/animate.min.css" rel="stylesheet">
 <link href="lib/css/savana.min.css" rel="stylesheet">
 ```
-##Use:
+### Use:
 ```
 $savana(document).done(function(e) {
   Your code here ...   
 });
 ```
-##Use:
+### Use:
 ```
 /*
  * Sumary
