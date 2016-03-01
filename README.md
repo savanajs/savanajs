@@ -1,5 +1,5 @@
 # SavanaJS
-## Build wildest web applications with Savana.js
+### Build wildest web applications with Savana.js
 
 ##Insert:
 ```
