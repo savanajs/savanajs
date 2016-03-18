@@ -13,20 +13,21 @@ $savana(document).done(function(e) {
     var headers = [{'Content-type':'application/x-www-form-urlencoded'}]; // Not required
     var data = "name=Rafael&age=27"; // Not required
     var success, error;
-    var config = 
-    {
-      'url': '../data/test.php', // Access path
-      'method':'POST', // Method of shipment (POST, GET, DELETE ...)
-      'headers': headers, // Headers information
-      'data': data, // Parameters shipping
-      'type': 'string' // Response type - (json, xml, string)
-    }
 
-    savana.ajax(config, function(r){
-        console.log(r)
-    }, function(){
-        console.log(e)
-    });
+    savana.ajax({
+          url: '../data/test.php', // Access path
+          method:'POST', // Method of shipment (POST, GET, DELETE ...)
+          headers: headers, // Headers information
+          data: data, // Parameters shipping
+          type: 'string', // Response type - (json, xml, string)
+          success: function(resp){
+             console.log(resp);
+          },
+          error: function(error){
+             console.error(error);
+          }
+        }
+    );
 
 });
 

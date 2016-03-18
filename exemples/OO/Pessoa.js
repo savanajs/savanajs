@@ -1,4 +1,4 @@
-var Mammal = SavanaObject.Create(function(){
+var Mammal = savana.createClass(function(){
 
   this.eyes = "Preto"; // this -> public
   this.fur = "castalho"; // this -> public
@@ -17,7 +17,7 @@ var Mammal = SavanaObject.Create(function(){
 
 });
 
-var Person = SavanaObject.Create(function(){
+var Person = savana.createClass(function(){
 
   this.name = "Rafael"; // this -> public
   this.age = 30;    
