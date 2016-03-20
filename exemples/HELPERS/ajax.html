@@ -14,26 +14,89 @@ $savana(document).done(function(e) {
     var data = "name=Rafael&age=27"; // Not required
     var success, error;
 
-    savana.ajax({
-          url: '../data/test.php', // Access path
-          method:'POST', // Method of shipment (POST, GET, DELETE ...)
-          headers: headers, // Headers information
-          data: data, // Parameters shipping
-          type: 'string', // Response type - (json, xml, string)
-          success: function(resp){
-             console.log(resp);
-          },
-          error: function(error){
-             console.error(error);
+    // UPLOAD
+
+    $savana("form").on("submit", function(e){
+
+      var form_data = new FormData();
+      var file = $savana("#file")[0];
+      form_data.append('file', file.files[0]);
+
+      savana.ajax({
+            url: '../data/test.php', // URL
+            method: 'POST', // Method of shipment (POST, GET, DELETE ...)
+            async: true,
+            data: form_data, // Parameters shipping
+            progress: function(value) {
+               $savana(".progress").styles("width: " + value + "%").html(value + "%");
+            },
+            success: function(resp){
+              console.log(resp);
+            },
+            error: function(error){
+              console.error(error);
+            }
           }
-        }
-    );
+      );
+
+      savana.eventStop(e);
+
+    });
+
+    // DOWNLOAD
+
+    $savana("a#btn-down").on("click", function(e){
+
+       savana.ajax({
+            url: "/exemples/data/test.json", // URL
+            method: 'GET', // Method of shipment (POST, GET, DELETE ...)
+            async: true,
+            progress: function(value) {
+               $savana(".progress").styles("width: " + value + "%").html(value + "%");
+            },
+            success: function(resp){
+              console.log(resp);
+            },
+            error: function(error){
+              console.error(error);
+            }
+          }
+      );
+
+      savana.eventStop(e);
+
+    });
 
 });
 
 </script>
+<style type="text/css" media="screen">
+  .bar{
+    border: 2px solid #000;
+    height: 15px;
+    margin-top: 10px;
+    width: 100%;
+    background: #e5e5e5;
+  }
+  .bar div {
+    background: green;
+    height: 15px;
+    width: 0%;
+    color: #fff;
+    text-align: center;
+  }
+</style>
 </head>
 <body>
 <p>To better see this method open the source code and the browser console</p>
+<form action="http://zinoui.com/demo/progress-bar/upload.php" method="post" enctype="multipart/form-data"> 
+<input type="file" name="file" id="file" class="upload" />
+<input type="submit" value="OK">
+
+<p><a href="#" id="btn-down">Download CSV</a></p>
+<div class="bar">
+   <div class="progress"></div>
+</div>
+</form>
 </body>
 </html>
