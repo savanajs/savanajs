@@ -1,22 +1,19 @@
 $savana(document).done(function(e) {
 
     var modelUsers = savana.Model({
-
-        configs: {
-           listUsers: {
-                'url': '/exemples/data/test.json',
-                'method': 'GET',
-                'type': 'json'
-            }
-        },
-
+        configs: {},
         getUsers: function(scope, fn) {
-            var promise = savana.async(scope.configs.listUsers);
-            promise.then(function(response) {
-                var json = savana.modelOrderBy(response.users, "name", "asc");  // Order by
-                fn(json);
-            }).catch(function(err) {
-                savana.debug(err, "error");
+            savana.ajax({
+                url: '/exemples/data/test.json',
+                method: 'GET',
+                type: 'json',
+                success: function(response){
+                   var json = savana.modelOrderBy(response.users, "name", "asc");  // Order by
+                   fn(json);
+                },
+                error: function(err){
+                   savana.debug(err, "error");
+                }
             });
             return scope;
         },
@@ -50,6 +47,7 @@ $savana(document).done(function(e) {
             }
 
             savana.render(scope, content, model);
+            $savana(".sjs-total-rows").text(savana.countObj(model));
             scope.always(scope, model);
             scope.delete(scope, model);
 

@@ -1,49 +1,55 @@
-var Mammal = savana.createClass(function(){
-
-  this.eyes = "Preto"; // this -> public
-  this.fur = "castalho"; // this -> public
-
-  this._init(function(){ // Initialization
- 
-  });
-
-  this.walk = function(){ // Method public
-  	alert("Walking")
-  }
-
-  this.speak = function(){ // Method public
-  	alert("Speaking")
-  }
-
-});
-
 var Person = savana.createClass(function(){
 
-  this.name = "Rafael"; // this -> public
-  this.age = 30;    
-  var _password = 12345678 // private with(_variable)
+         this.name;
+         this.gender;
+         this.city;
+         var password;
 
-  this._init(function(){ // Constructor
-  	_methodPrivate();
-  });
+         // Setters
 
-  this.methodPublic = function(){ // Method public
-  	alert("methodPublic")
-  }
+         this.set_name = function(name){ 
+             this.name = name;
+         }
 
-  this.showPassword = function(){
-     alert(_password);
-  }
+         this.set_gender = function(gender){ 
+             this.gender = gender;
+         }
 
-  function _methodPrivate(){ // Method private with(_fun)
-  	alert("methodPrivate");
-  }
+         this.set_city = function(city){ 
+             this.city = city;
+         }
 
-}, Mammal); // Extend
+         this.set_password = function(pwd){ 
+             password = pwd;
+         }
 
-console.log(Mammal)
-console.log(Person)
-Person.methodPublic();
-Person.walk();
-alert(Person._password); // Undefined
-Person.showPassword();
+         // Getters
+
+         this.get_name = function(){ 
+             return this.name;
+         }
+
+         this.get_gender = function(){ 
+             return this.gender;
+         }
+
+         this.get_city = function(){ 
+             return this.city;
+         }
+
+         this.get_password = function(){ 
+             return password;
+         }
+
+         this.getUserInfo = function(){
+            return "My name is " + this.get_name() + " - Sex: " + this.get_gender() + " - city: " + this.get_city() + " - password: " + this.get_password();
+         }
+
+}); 
+
+Person.set_name("Rafael");
+Person.set_gender("Male");
+Person.set_city("Barueri");
+Person.set_password(123456789);
+
+console.log(Person.getUserInfo());

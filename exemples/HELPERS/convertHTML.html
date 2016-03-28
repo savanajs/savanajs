@@ -2,17 +2,19 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Savana | Alert</title>
+  <title>Savana | Convert to HTML</title>
   <link rel="stylesheet" href="../../lib/css/animate.min.css">
   <link rel="stylesheet" href="../../lib/css/savana.css">
   <script src="../../lib/js/savana.js"></script> 
-  <script src="../../lib/js/addEventListener-IE.js"></script> 
 <script>
 
-$savana(document).done(function(e) {
+$sjs(document).done(function(e) {
 
-  savana.loadAlert();
-  savana.alert("Hello world");
+  sjs.convertHTML("<div>content</div>");
+
+  // Create a element dinamic
+  var t = $sjs("<div>").addClass("test").html("Element a create dinamic!").attr("alt","456465465");
+  $sjs("body").push(t.copy());
 
 });
 

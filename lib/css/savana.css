@@ -44,7 +44,7 @@ div.ht-popup-bg {
 }
 
 .sjs-router {
-  display: none;
+  /*display: none;*/
 }
 
 .ht-popup {
@@ -65,6 +65,18 @@ div.ht-popup-bg {
   -webkit-border-radius: 5px 5px 5px 5px;
   overflow: hidden;
   border: 1px solid #e5e5e5;
+}
+
+a.ht-close-thik {
+  color: red;
+  right: 10px;
+  top: 8px;
+  position: absolute;
+  text-decoration: none;
+}
+
+a.ht-close-thik:hover{
+  color: #000;
 }
 
 .ht-popup * {

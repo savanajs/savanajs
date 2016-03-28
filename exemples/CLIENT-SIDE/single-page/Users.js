@@ -13,39 +13,39 @@ $savana(document).done(function(e) {
                 'method':'POST',
                 'type': 'json',
                 'data':'',
-            },
-            uptUser: {
-                'url': '/exemples/data/uptUser.php',
-                'method':'POST',
-                'type': 'json',
-                'data':'',
-            },
-            delUser: {
-                'url': '/exemples/data/delUser.php',
-                'method':'POST',
-                'type': 'json',
-                'data':'',
-            },
+            }
         },
 
         getUsers: function(scope, fn) {
-            var promise = savana.async(scope.configs.getUsers);
-            promise.then(function(response) {
-                var json = savana.modelOrderBy(response.users, "name", "asc");  // Order by
-                fn(json);
-            }).catch(function(err) {
-                savana.debug(err, "error");
+            savana.ajax({
+                url: '/exemples/data/test.json',
+                method: 'GET',
+                async: true,
+                type: 'json',
+                success: function(response){
+                   var json = savana.modelOrderBy(response.users, "name", "asc");  // Order by
+                   fn(json);
+                },
+                error: function(err){
+                   savana.debug(err, "error");
+                }
             });
             return scope;
         },
 
         setUsers: function(scope, data, fn) {
-            scope.configs.setUsers.data = data;
-            var promise = savana.async(scope.configs.setUsers);
-            promise.then(function(response) {
-                fn(response);
-            }).catch(function(err) {
-                savana.debug(err, "error");
+            savana.ajax({
+                url: '/exemples/data/setUser.php',
+                method: 'POST',
+                async: true,
+                type: 'json',
+                success: function(response){
+                   console.log(response);
+                   fn(response);
+                },
+                error: function(err){
+                   savana.debug(err, "error");
+                }
             });
             return scope;
         }
@@ -78,8 +78,9 @@ $savana(document).done(function(e) {
             }
 
             savana.render(scope, content, model);
+            $savana(".sjs-total-rows").text(savana.countObj(model));
             scope.always(scope, model);
-            scope.delete(scope, model);
+            scope.deleteItem(scope, model);
 
         },
 
@@ -99,7 +100,7 @@ $savana(document).done(function(e) {
 
         },
 
-        delete: function(scope, json) {
+        deleteItem: function(scope, json) {
 
             $savana(scope.parent + " a.del").on("click", function(e) {
                 var model_upt = savana.modelDelete(json, "id", $savana(this).attr("rel"));
@@ -159,20 +160,32 @@ $savana(document).done(function(e) {
                     linkid:"#linkuser2",
                     async: "list-user2.html"
                   },
+                  page404: {
+                    async: "404.html"
+                  }
         },
 
         init: function(scope) {
+
             savana.loadRouter(scope, scope.router.listUser, function(params) {
                 modelUsers.getUsers(modelUsers, function(resp){
                     userView.init(userView, resp);
+                    
                 });
             });
-
+    
             savana.loadRouter(scope, scope.router.listUser2, function(params) {
                 modelUsers.getUsers(modelUsers, function(resp){
                     userView.init(userView, resp);
                 });
             });
+
+            savana.loadRouter(scope, scope.router.page404, function(params) {
+                modelUsers.getUsers(modelUsers, function(resp){
+                    userView.init(userView, resp);
+                });
+            });
+ 
         }
 
     });
