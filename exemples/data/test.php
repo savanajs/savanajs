@@ -1,4 +1,3 @@
 <?php
-echo "sdsd";
-   echo $_REQUEST['name'];
+   echo $_REQUEST['data'];
 ?>

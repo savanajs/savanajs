@@ -282,10 +282,7 @@ a.ht-close-thik:hover{
   z-index: 9999999;
   margin-left: -25px;
   margin-top: -25px;
-  padding: 5px;
-  background: #fff;
   border-radius: 50%;
-  border: 2px solid #7ac142;
 }
 
 .ht-error {

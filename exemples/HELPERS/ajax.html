@@ -24,7 +24,7 @@ $savana(document).done(function(e) {
 
       savana.ajax({
             url: '../data/test.php', // URL
-            method: 'POST', // Method of shipment (POST, GET, DELETE ...)
+            type: 'POST', // Method of shipment (POST, GET, DELETE ...)
             async: true,
             data: form_data, // Parameters shipping
             progress: function(value) {
@@ -50,6 +50,33 @@ $savana(document).done(function(e) {
        savana.ajax({
             url: "/exemples/data/test.json", // URL
             method: 'GET', // Method of shipment (POST, GET, DELETE ...)
+            async: true,
+            progress: function(value) {
+               $savana(".progress").styles("width: " + value + "%").html(value + "%");
+            },
+            success: function(resp){
+              console.log(resp);
+            },
+            error: function(error){
+              console.error(error);
+            }
+          }
+      );
+
+      savana.eventStop(e);
+
+    });
+
+    // SEND
+
+    $savana("a#btn-send").on("click", function(e){
+
+       var obj = {title: 'teste'}
+
+       savana.ajax({
+            url: "/exemples/data/test.php", // URL
+            data: JSON.stringify(obj),
+            type: 'POST', // Method of shipment (POST, GET, DELETE ...)
             async: true,
             progress: function(value) {
                $savana(".progress").styles("width: " + value + "%").html(value + "%");
@@ -97,6 +124,7 @@ $savana(document).done(function(e) {
 <div class="bar">
    <div class="progress"></div>
 </div>
+<p><a href="#" id="btn-send">Send</a></p>
 </form>
 </body>
 </html>

@@ -19,21 +19,22 @@ $savana(document).done(function(e) {
             var promise = savana.async({
               // -> configs
               'url': '../data/test.txt', // Caminho de acesso
-              'method':'POST', // Metodo de envio (POST, GET, DELETE ...)
+              'type':'POST', // Metodo de envio (POST, GET, DELETE ...)
               'headers': headers, // Informações de headers
               'data': data, // Parametros de envio
-              'type': 'string' // Tipo de resposta - (json, xml, string)
+              'dataType': 'string' // Tipo de resposta - (json, xml, string)
             });
 
             promise.then(function(res){
 
                 // Tudo certo com a requisição
-
-                savana.debug(e); // Return of object "XMLHttpRequest"
+                savana.debug(res); // Return of object "XMLHttpRequest"
 
             }).catch(function(err){
 
                 // Houve algum erro
+
+                alert(err)
 
                 savana.debug(err, "error"); // Return of object "XMLHttpRequest"
 
@@ -44,10 +45,10 @@ $savana(document).done(function(e) {
 
             var promise = savana.async({
               'url': '../data/test.txt',
-              'method':'POST',
+              'type':'POST',
               'headers': headers, 
               'data': data,
-              'type': 'string'
+              'dataType': 'string'
             });
 
             promise.then(function(string){
@@ -58,10 +59,10 @@ $savana(document).done(function(e) {
 
                 return savana.async({
                   'url': '../data/test.json',
-                  'method':'POST',
+                  'type':'POST',
                   'headers': headers, 
                   'data': data,
-                  'type': 'json'
+                  'dataType': 'json'
                 }); 
                 
                 // Evitando callback hell
