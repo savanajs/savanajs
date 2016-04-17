@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Savana | Debug</title>
+  <title>Savana | Debug and Multiples Debugs</title>
   <link rel="stylesheet" href="../../lib/css/animate.min.css">
   <link rel="stylesheet" href="../../lib/css/savana.css">
   <script src="../../lib/js/savana.js"></script> 
@@ -10,7 +10,17 @@
 
 $savana(document).done(function(e) {
 
-  savana.debug("Hello word");
+  // Enable and disable console
+  savana.config({
+	debug: true, // To enable and disable the debug (true and false)
+	alert: false, // To enable and disable the alert (true and false)
+  });
+  
+  // Simple console message
+  savana.debug("Hello word","info");
+
+  // Multiples console message
+  savana.debug(["Hello word","Hello word2","Hello word3"],"info");
 
 });
 

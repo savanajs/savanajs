@@ -12,10 +12,10 @@
 
 $savana(document).done(function(e) {
 
-  // Events (click, hover, change, keyup, etc)
+  // Events (click, hover, change, keyup, ...)
   $savana("a").on("click", function(e){
-     alert($savana(this).content("text")); // Reference to $savana("a")
-     savana.eventStop();
+     savana.eventStop(e);
+     alert($savana(this).content("text"));
   })
 
 });
