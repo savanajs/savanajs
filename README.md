@@ -22,7 +22,7 @@ $savana(document).done(function(e) {
  * 1.1 -- done ........................................ Initiator standard framework
  * 1.2 -- onLoad ...................................... Initiator Framework after the onload window
  * 1.3 -- on .......................................... Call events. (click, hover, change, keyup, etc)
- * 1.4 -- content ..................................... Insert and capture text, HTML or values of elements
+ * 1.4 --    .......................................... 
  * 1.5 -- each ........................................ Get an HTML element set
  * 1.6 -- push ........................................ Insert content within HTML elements
  * 1.7 -- destroy ..................................... Remove HTML elements
@@ -56,6 +56,7 @@ $savana(document).done(function(e) {
  * 1.36 - isEmpty ..................................... Verify that the contents of an element is empty
  * 1.37 - delegate .................................... Call events dynamics. (click, hover, change, keyup, etc)
  * 1.38 - scroll ...................................... Initiator Framework after page scroll.
+ * 1.39 - load ........................................ Get content from an external page
  
  * 2 ---- HELPERS - savana.fn();
  *
@@ -115,9 +116,8 @@ $savana(document).done(function(e) {
  * 2.54 -- whatBrowser ................................ Show the device of user
  * 2.55 -- objToJSON .................................. Convert object to JSON
  * 2.56 -- ajax ....................................... Asynchronous makes access to other
- * 3 ---- Creates Objects;
- * 3.1 -- ObjectJS .................................... Create objects in script in a simpler form
- * 4 ---- CLIENT-SIDE
- * 4.1 --
- */
+ * 2.57 -- createClass ................................ Create objects in script in a simpler form
+ * 2.58 -- convertHTML ................................ Convert a content string to HTML
+ * 2.59 -- daysDifferenceBetweenDates ................. Returns the day difference between a start date and end date
+*/
 ```
