@@ -12,15 +12,15 @@ $savana(document).done(function(e) {
 
   // Enable and disable console
   savana.config({
-	debug: true, // To enable and disable the debug (true and false)
-	alert: false, // To enable and disable the alert (true and false)
+  	debug: false, // To enable and disable the debug (true and false)
+  	alert: false, // To enable and disable the alert (true and false)
   });
   
   // Simple console message
-  savana.debug("Hello word","info");
+  console.log("Hello word");
 
   // Multiples console message
-  savana.debug(["Hello word","Hello word2","Hello word3"],"info");
+  console.info(["Hello word","Hello word2","Hello word3"]);
 
 });
 
