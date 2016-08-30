@@ -2,16 +2,18 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Savana | Alert</title>
+  <title>Savana | NextAll</title>
   <link rel="stylesheet" href="../../lib/css/animate.min.css">
   <link rel="stylesheet" href="../../lib/css/savana.css">
   <script src="../../lib/js/savana.js"></script> 
-  <script src="../../lib/js/addEventListener-IE.js"></script> 
 <script>
 
 $savana(document).done(function(e) {
 
-  savana.alert("Hello world");
+  // Inserir um elemneto envolta de outro
+  $savana("ul > li.l3").nextAll(function(){
+    $savana(this).hide();
+  });
 
 });
 
@@ -19,5 +21,13 @@ $savana(document).done(function(e) {
 </head>
 <body>
 <p>To better see this method open the source code and the browser console</p>
+
+<ul>
+  <li class="l1">List 1</li>
+  <li class="l2">List 2</li>
+  <li class="l3">List 3</li>
+  <li class="l4">List 4</li>
+  <li class="l5">List 5</li>
+</ul>
 </body>
 </html>

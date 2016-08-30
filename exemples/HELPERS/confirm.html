@@ -11,9 +11,12 @@
 
 $savana(document).done(function(e) {
 
-  savana.loadConfirm("Hello world")
   savana.confirm("Hello world", function(resp){
-       console.log(resp)
+       if(resp){
+         alert("Confirm");
+       }else{
+          alert("not confirm");
+       }
   });
 
 });
