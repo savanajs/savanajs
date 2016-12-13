@@ -1,0 +1,23 @@
+{
+  "name": "SavanaJS",
+  "description": "Build wildest web applications with Savanajs",
+  "main": "lib/js/savana.js",
+  "authors": [
+    "Rafael Cruz <rafaelcruz1@hotmail.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "framework",
+    "js",
+    "javascript"
+  ],
+  "homepage": "https://github.com/savanajs/savanajs",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

@@ -12,6 +12,11 @@ $savana(document).done(function(e) {
   Your code here ...   
 });
 ```
+### Bower install:
+```javascript
+bower install savanajs
+```
+
 ### Sumary:
 ```html
 /*
