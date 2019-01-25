@@ -1,6 +1,6 @@
 # SavanaJS - Felina
 
-[![Build Status](https://travis-ci.org/savanajs/tdd-wrapper.svg?branch=master)](https://travis-ci.org/savanajs/tdd-wrapper) [![Coverage Status](https://coveralls.io/repos/github/savanajs/tdd-wrapper/badge.svg?branch=master)](https://coveralls.io/github/savanajs/tdd-wrapper?branch=master)
+[![Build Status](https://travis-ci.org/savanajs/savanajs.svg?branch=felina)](https://travis-ci.org/savanajs/savanajs) [![Coverage Status](https://coveralls.io/repos/github/savanajs/tdd-wrapper/badge.svg?branch=master)](https://coveralls.io/github/savanajs/tdd-wrapper?branch=master)
 
 Description text
 
