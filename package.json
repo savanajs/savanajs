@@ -17,7 +17,7 @@
     "test:tdd": "jest --watch",
     "test:coverage": "jest --coverage",
     "babel": "babel-node exemple/albums.js",
-    "coveralls": "npm run test:coverage && coveralls",
+    "coveralls": "npm run test:coverage",
     "start": "./node_modules/.bin/webpack-dev-server --open"
   },
   "jest": {
@@ -39,7 +39,9 @@
           "outputPath": "./tests/report/test-report.html"
         }
       ]
-    ]
+    ],
+    "collectCoverage": true,
+    "coverageReporters": ["json", "html"]
   },
   "files": [
     "dist",
@@ -59,8 +61,6 @@
   },
   "homepage": "https://github.com/savanajs/savanajs#readme",
   "devDependencies": {
-    "coveralls": "^3.0.2",
-    "nyc": "^11.8.0",
     "babel-cli": "^6.26.0",
     "babel-jest": "^24.0.0",
     "babel-loader": "^7.0.0",
