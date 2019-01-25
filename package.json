@@ -1,0 +1,74 @@
+{
+  "name": "savanajs",
+  "version": "1.0.0",
+  "description": "Javascript framework for building web applications wildest",
+  "main": "index.js",
+  "scripts": {
+    "clear": "rimraf lib",
+    "build_cmd": "./node_modules/.bin/babel --out-dir lib src",
+    "build": "npm run clear && npm run build_cmd",
+    "build:watch": "npm run build -- --watch",
+    "build:umd": "./node_modules/.bin/webpack --output-filename savanajs.umd.js",
+    "build:umd:min": "./node_modules/.bin/webpack --output-filename savanajs.umd.min.js -p",
+    "build:all": "npm run build && npm run build:umd && npm run build:umd:min",
+    "lint": "./node_modules/.bin/eslint src/*.js",
+    "precommit": "npm run lint && npm run coveralls",
+    "test": "jest",
+    "test:tdd": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "babel": "babel-node exemple/albums.js",
+    "coveralls": "npm run test:coverage",
+    "start": "./node_modules/.bin/webpack-dev-server --open"
+  },
+  "jest": {
+    "transform": {},
+    "coverageThreshold": {
+      "global": {
+        "branches": 80,
+        "functions": 80,
+        "lines": 80,
+        "statements": 80
+      }
+    },
+    "reporters": [
+      "default",
+      ["./node_modules/jest-html-reporter", {
+          "pageTitle": "Test Report",
+          "outputPath": "./tests/report/test-report.html"
+      }]
+    ]
+  },
+  "files": [
+    "dist",
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/savanajs/savanajs.git"
+  },
+  "keywords": [
+    "javascript"
+  ],
+  "author": "Rafael Cruz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/savanajs/savanajs/issues"
+  },
+  "homepage": "https://github.com/savanajs/savanajs#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-jest": "^24.0.0",
+    "babel-loader": "^7.0.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0",
+    "eslint": "^5.12.1",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.11.0",
+    "husky": "^0.11.9",
+    "jest": "^23.3.0",
+    "jest-html-reporter": "^2.4.3",
+    "rimraf": "^2.6.3",
+    "webpack": "^2.6.1",
+    "webpack-dev-server": "^2.4.5"
+  }
+}
