@@ -12,12 +12,12 @@
     "build:umd:min": "./node_modules/.bin/webpack --output-filename savanajs.umd.min.js -p",
     "build:all": "npm run build && npm run build:umd && npm run build:umd:min",
     "lint": "./node_modules/.bin/eslint src/*.js",
-    "precommit": "npm run lint && npm run coveralls",
+    "precommit": "npm run lint",
     "test": "jest",
     "test:tdd": "jest --watch",
     "test:coverage": "jest --coverage",
     "babel": "babel-node exemple/albums.js",
-    "coveralls": "npm run test:coverage",
+    "coveralls": "npm run test:coverage && nyc report --reporter=text-lcov | coveralls",
     "start": "./node_modules/.bin/webpack-dev-server --open"
   },
   "jest": {
@@ -32,10 +32,13 @@
     },
     "reporters": [
       "default",
-      ["./node_modules/jest-html-reporter", {
+      [
+        "./node_modules/jest-html-reporter",
+        {
           "pageTitle": "Test Report",
           "outputPath": "./tests/report/test-report.html"
-      }]
+        }
+      ]
     ]
   },
   "files": [
@@ -56,6 +59,8 @@
   },
   "homepage": "https://github.com/savanajs/savanajs#readme",
   "devDependencies": {
+    "coveralls": "^3.0.2",
+    "nyc": "^11.8.0",
     "babel-cli": "^6.26.0",
     "babel-jest": "^24.0.0",
     "babel-loader": "^7.0.0",
