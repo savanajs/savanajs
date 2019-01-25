@@ -17,7 +17,7 @@
     "test:tdd": "jest --watch",
     "test:coverage": "jest --coverage",
     "babel": "babel-node exemple/albums.js",
-    "coveralls": "npm run test:coverage && nyc report --reporter=text-lcov | coveralls",
+    "coveralls": "npm run test:coverage && coveralls",
     "start": "./node_modules/.bin/webpack-dev-server --open"
   },
   "jest": {
