@@ -2,5 +2,14 @@
     "extends": "airbnb-base",
     "plugins": [
         "import"
-    ]
+    ],
+    "env": {
+        "browser": true,
+        "node": true
+    },
+    "globals": {
+       "document": false,
+       "window": false,
+       "location": false
+    }
 }
