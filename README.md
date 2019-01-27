@@ -1,6 +1,6 @@
 # SavanaJS - Felina
 
-[![Build Status](https://travis-ci.org/savanajs/savanajs.svg?branch=felina)](https://travis-ci.org/savanajs/savanajs) [![Coverage Status]
+[![Build Status](https://travis-ci.org/savanajs/savanajs.svg?branch=felina)](https://travis-ci.org/savanajs/savanajs)
 
 Description text
 
