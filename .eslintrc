@@ -1,15 +1,108 @@
+/**
+  * ESLINT.
+  * http://eslint.org/docs/rules/
+  * Run: gulp watch-eslint ou gulp eslint ou gulp testcode.
+  * Editor: http://dillinger.io/
+  {
+        "extends": "standard"
+    }
+
+*/
+
 {
-    "extends": "airbnb-base",
-    "plugins": [
-        "import"
-    ],
     "env": {
-        "browser": true,
-        "node": true
+      "browser": true,
+      "es6": true // Habilita metodos do ES6
+    },
+    "parserOptions": {
+      "sourceType": "module"
     },
     "globals": {
-       "document": false,
-       "window": false,
-       "location": false
+        "document": false,
+        "window": false,
+        "location": false,
+        "isNaN": false
+    },
+    "extends": "eslint:recommended", // eslint:recommended
+    "rules": {
+      "wrap-iife": 0, // Aceita funÃƒÂ§ÃƒÂµes anonimas
+      "func-names": 0, // Aceita funÃƒÂ§ÃƒÂµes anonimas sem nome
+      "space-before-function-paren": 0, // Necessita ter um espaÃƒÂ§o antes dos "()" dos "function ()" nas funÃƒÂ§ÃƒÂµes
+      "space-before-blocks": 0, // Necessita ter um espaÃƒÂ§o antes dos "{}" dos "() {}"" nas funÃƒÂ§ÃƒÂµes
+      "no-undef": 0, // Aceita variaveis indefinidas
+      "indent": [
+        0
+      ], // IndentaÃƒÂ§ÃƒÂ£o de uma tab no bloco
+      "id-length": 0, // NÃƒÂ£o necessita de tamanho minimo de nomes de variaveis
+      "prefer-arrow-callback": 0, // NÃƒÂ£o obriga o uso de setas nÃƒÂ£o funÃƒÂ§ÃƒÂµes =>
+      "max-statements": 0, // NÃƒÂ£o limita um numero mÃƒÂ¡ximo de declaraÃƒÂ§ÃƒÂµes em funÃƒÂ§ÃƒÂµes
+      "no-magic-numbers": 0, //Aceita numeros magicos nas variaveis
+      "quotes": [
+        0,
+        "double"
+      ], // Obriga o uso da aspas simples nas atribuiÃƒÂ§ÃƒÂµes de variaveis
+      "max-len": 0, // NÃƒÂ£o limita um maximo de caracters em linha
+      "no-var": 2, // Aceita declaraÃƒÂ§ÃƒÂµes de var
+      "vars-on-top": 0, // NÃƒÂ£o obriga o uso de variaveis "var"" fora do escopo de funÃƒÂ§ÃƒÂµes
+      "no-unused-vars": 2, // Mostra erro em variaveis declaradas mas nÃƒÂ£o usadas
+      "one-var": 0, // NÃƒÂ£o obriga o uso de uma declaraÃƒÂ§ÃƒÂ£o "var". Ex: var a,b,c;
+      "prefer-const": 1,
+      "init-declarations": 0, // NÃƒÂ£o obriga atribuir um valor na variavel na sua declaraÃƒÂ§ÃƒÂ£o
+      "no-console": 1,
+      "no-mixed-spaces-and-tabs": 1,
+      "no-trailing-spaces": 0,
+      "padded-blocks": 0, // Obriga o uso de linhas de espaco dentro de blocos {}
+      "curly": 0, // Obriga o fechamento de {} nos ifs
+      "no-empty-func": 0,
+      "no-empty-function": 0, // NÃƒÂ£o aceita funÃƒÂ§ÃƒÂµes vazias.
+      "no-empty": 0,
+      "brace-style": 0, // Aceita que os blocks {} comeÃƒÂ§em na proxima linha
+      "no-label-var": 2,
+      "func-style": 0, // Aceita function declarations (var f = function () {}) ou function expressions (function f () {})
+      "require-jsdoc": [
+        0,
+        {
+          "require": {
+            "FunctionDeclaration": true,
+            "MethodDefinition": true,
+            "ClassDeclaration": true
+          }
+        }
+      ], // Comentario de documentaÃƒÂ§ÃƒÂ£o da funÃƒÂ§ÃƒÂ£o
+      "no-extra-semi": 2,
+      "no-plusplus": 0,
+      "object-curly-spacing": 0, // Sem espaÃƒÂ§os em objetos JSON ex: { pos: 1 }
+      "dot-notation": 1,
+      "quote-props": 0, // Obriga a ter (') em propriedades {'pos': 1}
+      "eol-last": 0,
+      "semi": 0, // Obriga o uso de ; no final de variaveis.
+      "no-alert": 0,
+      "space-in-parens": 2, // NÃƒÂ£o aceita espacos dentro de fn( 1 );
+      "linebreak-style": [
+        0,
+        "unix"
+      ],
+      "camelcase": 0, // Objeto literal em bloco
+      "comma-spacing": 2, // Obriga o espaÃƒÂ§o depois da virgula
+      "sort-keys": 0,
+      "object-shorthand": 0,
+      "prefer-template": 0,
+      "no-array-constructor": 0,
+      "keyword-spacing": 2,
+      "comma-dangle": 0,
+      "strict": 1,
+      "newline-after-var": 2, // Obriga uma nova linha depois da ultima declaraÃƒÂ§ÃƒÂ£o var
+      "newline-before-return": 0,
+      "newline-per-chained-call": 0,
+      "object-property-newline": 2,
+      "object-curly-newline": 1,
+      "dot-location": 0,
+      "key-spacing": [
+        2,
+        {
+          "beforeColon": false,
+          "afterColon": true
+        }
+      ]
     }
-}
+  }

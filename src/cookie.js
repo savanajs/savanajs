@@ -10,6 +10,7 @@ function Cookie() {
 
     while (i < split.length) {
       let c = split[i];
+
       while (c.charAt(0) === ' ') c = c.substring(1);
       if (c.indexOf(newName) !== -1) return decodeURI(c.substring(newName.length, c.length));
       i += 1;
@@ -44,6 +45,7 @@ function Cookie() {
     if (!cookies.length || !document.cookie) return false;
     while (i < cookies.length) {
       const cookie = cookies[i];
+
       // const eqPos = cookie.indexOf('=');
       // const name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
       document.cookie = cookie.toString().concat('=;expires=Thu, 01 Jan 1970 00:00:00 GMT');
@@ -55,6 +57,7 @@ function Cookie() {
     if (!name || !value || !hours) return false;
 
     const date = new Date();
+
     date.setTime(date.getTime() + (hours * 1000 * 60 * 60));
 
     const encodeValue = encodeURI(value);
