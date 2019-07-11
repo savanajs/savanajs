@@ -120,8 +120,8 @@ describe('Test method remove', () => {
 
   test('Should return true by passed name cookie exists', () => {
 
-    expect(cookie.remove('exemple')).toBeTruthy();
-    expect(cookie.exists('exemple')).toBeFalsy();
+    expect(cookie.remove("exemple")).toBeTruthy();
+    expect(cookie.remove("exemple", "/home", "subdomain.site.com")).toBeTruthy();
 
   });
 

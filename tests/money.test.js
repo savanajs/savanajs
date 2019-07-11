@@ -154,6 +154,8 @@ describe('Test method money installment', () => {
     expect(money.installment("R$ 380.50", 10, 50)).toMatchObject({parc: "7x", parc_number: 7, price: "54,36", price_number: 54.36, juros: null});
     expect(money.installment(380.50, 10, 50)).toMatchObject({parc: "7x", parc_number: 7, price: "54,36", price_number: 54.36, juros: null});
     expect(money.installment(380.50, 10, 50, 5)).toMatchObject({parc: "7x", parc_number: 7, price: "76,49", price_number: 76.49, juros: "5% a.m"});
+    expect(money.installment(380.50, 1, 50, 5)).toMatchObject({parc: "1x", parc_number: 1, price: "399,53", price_number: 399.53, juros: "5% a.m"});
+    expect(money.installment(380.50, 0, 50)).toBeFalsy();
 
   });
 
@@ -177,6 +179,7 @@ describe('Test method money financing', () => {
 
     expect(money.financing("R$ 500,00", 10, 100, 2)).toMatchObject({parc: "5x", parc_number: 5, price: "106,08", price_number: 106.08, juros: "2% a.m"});
     expect(money.financing(500.00, 10, 100, 2)).toMatchObject({parc: "5x", parc_number: 5, price: "106,08", price_number: 106.08, juros: "2% a.m"});
+    expect(money.financing(500.00, 1, 100, 2)).toMatchObject({parc: "1x", parc_number: 1, price: "510,00", price_number: 510.00, juros: "2% a.m"});
 
   });
 

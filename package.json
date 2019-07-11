@@ -8,40 +8,17 @@
     "build_cmd": "./node_modules/.bin/babel --out-dir lib src",
     "build": "npm run clear && npm run build_cmd",
     "build:watch": "npm run build -- --watch",
-    "build:umd": "./node_modules/.bin/webpack --output-filename savanajs.umd.js",
-    "build:umd:min": "./node_modules/.bin/webpack --output-filename savanajs.umd.min.js -p",
+    "build:umd": "./node_modules/.bin/webpack --output-filename savanajs.js",
+    "build:umd:min": "./node_modules/.bin/webpack --output-filename savanajs.min.js -p",
     "build:all": "npm run build && npm run build:umd && npm run build:umd:min",
     "lint": "./node_modules/.bin/eslint src/*.js",
     "precommit": "npm run lint",
-    "test": "jest",
-    "test:tdd": "jest --watch",
-    "test:coverage": "jest --coverage",
+    "test": "jest --env=jsdom",
+    "test:tdd": "jest --watch --env=jsdom",
+    "test:coverage": "jest --coverage --env=jsdom",
     "babel": "babel-node exemple/albums.js",
     "coveralls": "npm run test:coverage",
     "start": "./node_modules/.bin/webpack-dev-server --open"
-  },
-  "jest": {
-    "transform": {},
-    "coverageThreshold": {
-      "global": {
-        "branches": 20,
-        "functions": 20,
-        "lines": 20,
-        "statements": 20
-      }
-    },
-    "reporters": [
-      "default",
-      [
-        "./node_modules/jest-html-reporter",
-        {
-          "pageTitle": "Test Report",
-          "outputPath": "./tests/report/test-report.html"
-        }
-      ]
-    ],
-    "collectCoverage": true,
-    "coverageReporters": ["json", "html"]
   },
   "files": [
     "dist",
@@ -62,9 +39,11 @@
   "homepage": "https://github.com/savanajs/savanajs#readme",
   "devDependencies": {
     "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
     "babel-jest": "^24.0.0",
-    "babel-loader": "^7.0.0",
+    "babel-loader": "^7.1.5",
     "babel-preset-env": "^1.7.0",
+    "babel-preset-es2015": "^6.24.1",
     "babel-register": "^6.26.0",
     "eslint": "^5.12.1",
     "eslint-config-airbnb": "^17.1.0",

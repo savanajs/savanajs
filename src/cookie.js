@@ -33,10 +33,16 @@ function Cookie() {
 
     return exists;
   };
-  this.remove = (name) => {
+  this.remove = (name, path, domain) => {
+
     if (!name || !this.exists(name)) return false;
-    document.cookie = name.toString().concat('=;expires=Thu, 01 Jan 1970 00:00:01 GMT;');
+
+    domain = domain || document.domain;
+    path = path || "/";
+    document.cookie = name + "=; expires=" + new Date + "; domain=" + domain + "; path=" + path;
+
     return true;
+
   };
   this.removeAll = () => {
     const cookies = document.cookie.split(';');

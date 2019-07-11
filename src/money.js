@@ -84,8 +84,6 @@ function Money() {
 
     if (juros === 0 || !juros) {
 
-      if (parcs > 0) {
-
         values.parc = parcs + "x";
         values.parc_number = parcs;
         values.price = this.format(item_price, ',', '.');
@@ -93,12 +91,6 @@ function Money() {
         values.juros = null;
 
         return values;
-
-      } else {
-
-        return false;
-
-      }
 
     } else {
 
