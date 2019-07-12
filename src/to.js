@@ -21,7 +21,7 @@ function To(){
 
     if (!str) return false;
 
-    if(typeof str === 'object') {
+    if (typeof str === 'object') {
 
       return JSON.stringify(str);
 
@@ -35,6 +35,7 @@ function To(){
     if (!str) return false;
 
     const parser = new DOMParser();
+
     return parser.parseFromString(str, "text/xml");
 
   }
@@ -49,7 +50,7 @@ function To(){
     .replace(/[óòõôö]/g, "o")
     .replace(/[úùũûü]/g, "u")
     .replace(/ç/g, "c")
-    .replace(/(\ |_)+/, " ")
+    .replace(/(\s|_)+/, " ")
     .replace(/(^-+|-+$)/, "")
     .replace(/[^a-z0-9]+/g, '-');
     

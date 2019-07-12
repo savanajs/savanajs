@@ -25,7 +25,7 @@ function Is(){
 
     if (!value) return false;
 
-    const regexp = /^((http|https|ftp|ftps):\/\/)?([a-z0-9\-]+\.)?[a-z0-9\-]+\.[a-z0-9]{2,4}(\.[a-z0-9]{2,4})?(\/.*)?$/i;
+    const regexp = /^((http|https|ftp|ftps):\/\/)?([a-z0-9-]+\.)?[a-z0-9-]+\.[a-z0-9]{2,4}(\.[a-z0-9]{2,4})?(\/.*)?$/i;
     
     return regexp.test(value);
     
@@ -86,7 +86,7 @@ function Is(){
   }
   this.IE = () => {
 
-    var browser = navigator.userAgent.toLowerCase();
+    const browser = navigator.userAgent.toLowerCase();
 
     return (browser.indexOf('msie') != -1) ? true : false;
     

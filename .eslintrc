@@ -71,6 +71,7 @@
       ], // Comentario de documentaÃƒÂ§ÃƒÂ£o da funÃƒÂ§ÃƒÂ£o
       "no-extra-semi": 2,
       "no-plusplus": 0,
+      "no-useless-escape": 0,
       "object-curly-spacing": 0, // Sem espaÃƒÂ§os em objetos JSON ex: { pos: 1 }
       "dot-notation": 1,
       "quote-props": 0, // Obriga a ter (') em propriedades {'pos': 1}

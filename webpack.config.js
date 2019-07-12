@@ -16,7 +16,7 @@ module.exports = {
     library: '$savana',
   },
   devServer: {
-    contentBase: path.resolve(__dirname, './example'),
+    contentBase: path.resolve(__dirname, './view'),
   },
   devtool: 'source-map',
   module: {

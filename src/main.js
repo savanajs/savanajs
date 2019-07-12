@@ -2,12 +2,14 @@ const cookie = require('./cookie.js');
 const money = require('./money.js');
 const to = require('./to.js');
 const is = require('./is.js');
+const url = require('./url.js');
 
 const Savana = {
   cookie,
   money,
   to,
-  is
+  is,
+  url
 };
 
 

@@ -16,7 +16,7 @@
     "test": "jest --env=jsdom",
     "test:tdd": "jest --watch --env=jsdom",
     "test:coverage": "jest --coverage --env=jsdom",
-    "babel": "babel-node exemple/albums.js",
+    "babel": "babel-node view/albums.js",
     "coveralls": "npm run test:coverage",
     "start": "./node_modules/.bin/webpack-dev-server --open"
   },
