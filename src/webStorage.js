@@ -29,6 +29,8 @@ function WebStorage(){
     // Depois, em outra página ou aba, recupera esse item
     let value = window.localStorage.getItem(name);
 
+    if (!value) return false;
+
     if (value.indexOf("{") > -1 || value.indexOf("[]") > -1) {
 
         value = JSON.parse(value);
@@ -38,7 +40,7 @@ function WebStorage(){
     return value;
 
   }
-  this.delete = () => {
+  this.delete = (name, index_for_delete) => {
 
     if (!name) {
 
@@ -52,7 +54,7 @@ function WebStorage(){
 
         if (typeof value != "object") {
 
-            return;
+            return false;
 
         }
 
@@ -65,16 +67,16 @@ function WebStorage(){
 
         }
 
-        return value;
+        return true;
 
     } else {
 
         this.create(name, "");
         localStorage.removeItem(name);
 
-    }
+        return true;
 
-    return false;
+    }
 
   }
 }

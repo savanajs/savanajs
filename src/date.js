@@ -1,8 +1,8 @@
-function Date(){
+function DateClass(){
 
   this.timestamp = () => {
 
-    return new Date().now();
+    return new Date().getTime();
 
   }
 
@@ -27,5 +27,5 @@ function Date(){
 
 // Usando na função "require" do NODEJS
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
-  module.exports = new Date();
+  module.exports = new DateClass();
 }

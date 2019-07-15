@@ -1,9 +1,9 @@
 function String(){
   this.contain = (target, str) => {
 
-    if (!target || !max_qtd) return false;
+    if (!target || !str) return false;
 
-    return (!target.indexOf(str));
+    return (~target.indexOf(str)) ? true : false;
 
   }
   this.limitLetter = (str, first_qtd, max_qtd) => {
@@ -13,9 +13,13 @@ function String(){
     const dot = "...";
 
     if (str.length > max_qtd) {
+
         return str.substring(first_qtd, max_qtd) + dot;
+
     } else {
+
         return str.substring(first_qtd, max_qtd);
+
     }
 
   }
