@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/savanajs/savanajs.svg?branch=felina)](https://travis-ci.org/savanajs/savanajs)
 
-Description text
+Savana is a JavaScript framework that assists in developing web applications using DOM manipulation methods helpers and simple concepts of client-side development.
 
 ## Browser Support
 
@@ -12,58 +12,373 @@ This library relies on [Fetch API](https://fetch.spec.whatwg.org/). And this API
 --- | --- | --- | --- | --- |
 39+ ✔ | 42+ ✔ | 29+ ✔ | 10.1+ ✔ | Nope ✘ |
 
-## Dependencies
-
-This library depends on [fetch](https://fetch.spec.whatwg.org/) to make requests to the Spotify Web API. For environments that don't support fetch, you'll need to provide a [polyfill](https://github.com/github/fetch) to browser or [polyfill](https://github.com/bitinn/node-fetch) to Node.
-
 ## Installation
 
-```sh
-$ npm install spotify-wrapper --save
-```
+Insert in your end body.
 
-## How to use
-
-### ES6
-
-```js
-// to import a specific method
-import ...
-```
-
-### CommonJS
-
-```js
-const SpotifyWrapper = require('spotify-wrapper').default;
-
-const spotify = new SpotifyWrapper({
-  token: 'YOUR_TOKEN_HERE'
-});
+```html
+<body>
+...
+</body>
+<script src="/lib/savana.min.js"></script>
 ```
 
 ## Methods
 
-> Follow the methods that the library provides.
+lorem....
 
-### search.albums(query)
+### Arrays
 
-> Search for informations about Albums with provided query. Test in [Spotify Web Console](https://developer.spotify.com/web-api/console/get-search-item/) with type defined as *album*.
+Methods of manager of arrays.
+
+#### $savana.array.add(array, value, position)
 
 **Arguments**
 
 | Argument | Type    | Options           |
 |----------|---------|-------------------|
-|`query`   |*string* | 'Any search query'|
+|`array`   |*string* | |
+|`value`   |*string or number* | |
+|`position`   |*string* | last, first |
 
 
-**Example**
+**Add value in last position of array**
 
 ```js
-spotify.search.albums('Incubus')
-  .then(data => {
-    // do what you want with the data
-  })
+ $savana.array.add([1,2,3], 4); // [1,2,3,4]
+ $savana.array.add([1,2,3], 4, "last"); // [1,2,3,4]
 ```
+
+**Add value in first position of array**
+
+```js
+ $savana.array.add([1,2,3], 4, "first"); // [4,1,2,3]
+```
+
+**Add value in position of array**
+
+```js
+ $savana.array.add([1,2,3], 4, 1); // [1,4,2,3]
+```
+
+#### $savana.array.remove(array, value, position)
+
+**Arguments**
+
+| Argument | Type    | Options           |
+|----------|---------|-------------------|
+|`array`   |*string* | |
+|`value`   |*string or number* | |
+|`position`   |*string* | last, first |
+
+#### $savana.array.getIndex(arr, value)
+
+**Arguments**
+
+| Argument | Type    | Options           |
+|----------|---------|-------------------|
+|`array`   |*string* | |
+|`value`   |*string or number* | |
+
+#### $savana.array.search(arr, value, position)
+
+**Arguments**
+
+| Argument | Type    | Options           |
+|----------|---------|-------------------|
+|`array`   |*string* | |
+|`value`   |*string or number* | |
+|`position`   |*string* | last, first |
+
+### Cookie
+
+Methods of manager of cookies.
+
+#### $savana.cookie.get()
+
+**Arguments**
+
+| Argument | Type    | Options           |
+|----------|---------|-------------------|
+|`array`   |*string* | |
+|`value`   |*string or number* | |
+|`position`   |*string* | last, first |
+
+#### $savana.cookie.exists()
+
+**Arguments**
+
+| Argument | Type    | Options           |
+|----------|---------|-------------------|
+|`array`   |*string* | |
+|`value`   |*string or number* | |
+|`position`   |*string* | last, first |
+
+#### $savana.cookie.remove()
+
+**Arguments**
+
+| Argument | Type    | Options           |
+|----------|---------|-------------------|
+|`array`   |*string* | |
+|`value`   |*string or number* | |
+|`position`   |*string* | last, first |
+
+#### $savana.cookie.removeAll()
+
+**Arguments**
+
+| Argument | Type    | Options           |
+|----------|---------|-------------------|
+|`array`   |*string* | |
+|`value`   |*string or number* | |
+|`position`   |*string* | last, first |
+
+#### $savana.cookie.set()
+
+**Arguments**
+
+| Argument | Type    | Options           |
+|----------|---------|-------------------|
+|`array`   |*string* | |
+|`value`   |*string or number* | |
+|`position`   |*string* | last, first |
+
+### Date
+
+Methods of manager of date.
+
+#### $savana.date.timestamp()
+
+...
+
+#### $savana.date.daysDifferenceBetweenDates()
+
+...
+
+### Get
+
+Methods of manager of get.
+
+#### $savana.get.getNumberOfString()
+
+...
+
+#### $savana.get.count()
+
+...
+
+### Is
+
+Methods of manager of validations.
+
+#### $savana.is.email()
+
+...
+
+#### $savana.is.number()
+
+...
+
+#### $savana.is.url()
+
+...
+
+#### $savana.is.function()
+
+...
+
+#### $savana.is.object()
+
+...
+
+#### $savana.is.CPF()
+
+...
+
+#### $savana.is.string()
+
+...
+
+#### $savana.is.IE()
+
+...
+
+#### $savana.is.NULL()
+
+...
+
+#### $savana.is.undefined()
+
+...
+
+#### $savana.is.NAN()
+
+...
+
+### Money
+
+Methods of manager of validations.
+
+#### $savana.money.format()
+
+...
+
+#### $savana.money.priceToFloat()
+
+...
+
+#### $savana.money.bill()
+
+...
+
+#### $savana.money.installment()
+
+...
+
+#### $savana.money.financing()
+
+...
+
+#### $savana.money.percentalDifference()
+
+...
+
+#### $savana.money.percentageDiscount()
+
+...
+
+### Object
+
+Methods of manager of objects.
+
+#### $savana.object.extends()
+
+...
+
+#### $savana.object.create()
+
+...
+
+#### $savana.object.remove()
+
+...
+
+#### $savana.object.search()
+
+...
+
+#### $savana.object.getKeys()
+
+...
+
+#### $savana.object.getValues()
+
+...
+
+#### $savana.object.toArray()
+
+...
+
+### String
+
+Methods of manager of strings.
+
+#### $savana.string.contain()
+
+...
+
+#### $savana.string.limitLetter()
+
+...
+
+#### $savana.string.limitWord()
+
+...
+
+#### $savana.string.trim()
+
+...
+
+### To
+
+Methods of manager of convertions.
+
+#### $savana.to.HTML()
+
+...
+
+#### $savana.to.JSON()
+
+...
+
+#### $savana.to.string()
+
+...
+
+#### $savana.to.XML()
+
+...
+
+#### $savana.to.rewrite()
+
+...
+
+#### $savana.to.upper()
+
+...
+
+#### $savana.to.lower()
+
+...
+
+### URL
+
+Methods of manager of urls.
+
+#### $savana.url.redirect()
+
+...
+
+#### $savana.url.getParams()
+
+...
+
+#### $savana.url.getCurrent()
+
+...
+
+#### $savana.url.getInfos()
+
+...
+
+### WEB Storage
+
+Methods of manager of urls.
+
+#### $savana.storage.create()
+
+...
+
+#### $savana.storage.select()
+
+...
+
+#### $savana.storage.delete()
+
+...
+
+### What
+
+Methods of manager of urls.
+
+#### $savana.what.browser()
+
+...
+
+#### $savana.what.device()
+
+...
 
 ## Contributing
 
@@ -72,14 +387,6 @@ Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c6
 ## Versioning
 
 We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags).
-
-## Authors
-
-| ![Willian Justen](https://avatars2.githubusercontent.com/u/3991845?v=3&s=150)|
-|:---------------------:|
-|  [Willian Justen](https://github.com/willianjusten/)   |
-
-See also the list of [contributors](https://github.com/willianjusten/spotify-wrapper/contributors) who participated in this project.
 
 ## License
 
