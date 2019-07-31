@@ -37,8 +37,8 @@ Methods of manager of arrays.
 
 | Argument | Type    | Options           |
 |----------|---------|-------------------|
-|`array`   |*string* | |
-|`value`   |*string or number* | |
+|`array *`   |*string* | |
+|`value *`   |*string or number* | |
 |`position`   |*string* | last, first |
 
 
@@ -67,9 +67,21 @@ Methods of manager of arrays.
 
 | Argument | Type    | Options           |
 |----------|---------|-------------------|
-|`array`   |*string* | |
-|`value`   |*string or number* | |
+|`array *`   |*string* | |
+|`value *`   |*string or number* | |
 |`position`   |*string* | last, first |
+
+**Remove the value of array**
+
+```js
+ $savana.array.remove(['a','b','c'], 'b'); // ['a','c']
+```
+
+**Remove the index position of array**
+
+```js
+ $savana.array.remove(['a','b','c'], null, 1); // ['a','c']
+```
 
 #### $savana.array.getIndex(arr, value)
 
@@ -77,8 +89,14 @@ Methods of manager of arrays.
 
 | Argument | Type    | Options           |
 |----------|---------|-------------------|
-|`array`   |*string* | |
-|`value`   |*string or number* | |
+|`array *`   |*string* | |
+|`value *`   |*string or number* | |
+
+**Get index position of array**
+
+```js
+ $savana.array.add([1,2,3], 2); // 1
+```
 
 #### $savana.array.search(arr, value, position)
 
@@ -86,55 +104,96 @@ Methods of manager of arrays.
 
 | Argument | Type    | Options           |
 |----------|---------|-------------------|
-|`array`   |*string* | |
-|`value`   |*string or number* | |
+|`array *`   |*string* | |
+|`value *`   |*string or number or NULL* | |
 |`position`   |*string* | last, first |
+
+**Get the value of array**
+
+```js
+ $savana.array.search(['a','b','c'], 'b'); // b
+```
+
+**Get the value by index of array**
+
+```js
+ $savana.array.search(['a','b','c'], null, 1); // b
+```
 
 ### Cookie
 
 Methods of manager of cookies.
 
-#### $savana.cookie.get()
+#### $savana.cookie.get(name)
 
 **Arguments**
 
 | Argument | Type    | Options           |
 |----------|---------|-------------------|
-|`array`   |*string* | |
-|`value`   |*string or number* | |
-|`position`   |*string* | last, first |
+|`name *`   |*string* | |
 
-#### $savana.cookie.exists()
+**Get the value of array**
 
-**Arguments**
+```js
+ $savana.cookie.get('fullname'); // John Carter
+```
 
-| Argument | Type    | Options           |
-|----------|---------|-------------------|
-|`array`   |*string* | |
-|`value`   |*string or number* | |
-|`position`   |*string* | last, first |
-
-#### $savana.cookie.remove()
+#### $savana.cookie.exists(name)
 
 **Arguments**
 
 | Argument | Type    | Options           |
 |----------|---------|-------------------|
-|`array`   |*string* | |
-|`value`   |*string or number* | |
-|`position`   |*string* | last, first |
+|`name *`   |*string* | |
+
+**Verify if cookie exists**
+
+```js
+ $savana.cookie.exists('fullname'); // true or false
+```
+
+#### $savana.cookie.remove(name, path, domain)
+
+**Arguments**
+
+| Argument | Type    | Options           |
+|----------|---------|-------------------|
+|`name`   |*string* | |
+|`path`   |*string* | |
+|`domain`   |*string* | 
+
+**Remove cookie**
+
+```js
+ $savana.cookie.remove("exemple", "/home", "subdomain.site.com"); // true or false
+```
 
 #### $savana.cookie.removeAll()
 
+**Remove all cookies**
+
+```js
+ $savana.cookie.removeAll(); // true or false
+```
+
+#### $savana.cookie.set(name, value, time, path, domain)
+
 **Arguments**
 
 | Argument | Type    | Options           |
 |----------|---------|-------------------|
-|`array`   |*string* | |
-|`value`   |*string or number* | |
-|`position`   |*string* | last, first |
+|`name *`   |*string* | |
+|`value *`   |*string or number* | |
+|`time *`   |*number* | In hours |
+|`path`   |*string* | |
+|`domain`   |*string* | 
 
-#### $savana.cookie.set()
+**Save cookie**
+
+```js
+ $savana.cookie.remove("exemple", "hello", 2);
+ $savana.cookie.remove("exemple2", "hello", 2, "/home", "subdomain.site.com");
+```
 
 **Arguments**
 
@@ -150,11 +209,19 @@ Methods of manager of date.
 
 #### $savana.date.timestamp()
 
-...
+** Get the timestamp **
+
+```js
+$savana.date.timestamp()
+```
 
 #### $savana.date.daysDifferenceBetweenDates()
 
-...
+**  Get the defference between dates **
+
+```js
+$savana.date.daysDifferenceBetweenDates(new Date(2016, 10, 20), new Date(2016, 10, 30))
+```
 
 ### Get
 
@@ -162,59 +229,200 @@ Methods of manager of get.
 
 #### $savana.get.getNumberOfString()
 
-...
+**Arguments**
+
+| Argument | Type    | Options           |
+|----------|---------|-------------------|
+|`value`   |*string* | |
+
+**Get number of strings**
+
+```js
+$savana.date.getNumberOfString('hello10hello') // 10
+```
 
 #### $savana.get.count()
 
-...
+**Arguments**
+
+| Argument | Type    | Options           |
+|----------|---------|-------------------|
+|`value`   |*string or Object* | |
+
+** Get the quantity of letters  **
+
+```js
+$savana.date.count('hello') // 5
+```
+
+** Get the quantity items of array  **
+
+```js
+$savana.date.count([]) // 0
+```
+
+** Get the quantity items of object  **
+
+```js
+$savana.date.count({}) // 0
+```
 
 ### Is
 
 Methods of manager of validations.
 
-#### $savana.is.email()
+#### $savana.is.email(email)
 
-...
+**Arguments**
 
-#### $savana.is.number()
+| Argument | Type    | Options           |
+|----------|---------|-------------------|
+|`email`   |*string* | |
 
-...
+**Validation of email**
 
-#### $savana.is.url()
+```js
+$savana.is.email('email@gmail.com.br'); // true
+```
 
-...
+#### $savana.is.number(number)
 
-#### $savana.is.function()
 
-...
+**Arguments**
 
-#### $savana.is.object()
+| Argument | Type    | Options           |
+|----------|---------|-------------------|
+|`number`   |*number* | |
 
-...
+**Validation of number**
 
-#### $savana.is.CPF()
+```js
+$savana.is.number(10); // true
+```
 
-...
+#### $savana.is.url(url)
 
-#### $savana.is.string()
+**Arguments**
 
-...
+| Argument | Type    | Options           |
+|----------|---------|-------------------|
+|`url`   |*string* | |
+
+**Validation of URL**
+
+```js
+$savana.is.url('https://github.com'); // true
+```
+
+#### $savana.is.function(value)
+
+**Arguments**
+
+| Argument | Type    | Options           |
+|----------|---------|-------------------|
+|`value`   |*function* | |
+
+**Validation of function**
+
+```js
+$savana.is.function(function(){}); // true
+```
+
+#### $savana.is.object(value)
+
+**Arguments**
+
+| Argument | Type    | Options           |
+|----------|---------|-------------------|
+|`value`   |*object* | |
+
+**Validation of object**
+
+```js
+$savana.is.object({}); // true
+```
+
+
+#### $savana.is.CPF(value)
+
+**Arguments**
+
+| Argument | Type    | Options           |
+|----------|---------|-------------------|
+|`value`   |*string or number* | |
+
+**Validation of CPF**
+
+```js
+$savana.is.CPF('12345678909'); // true
+```
+
+#### $savana.is.string(value)
+
+**Arguments**
+
+| Argument | Type    | Options           |
+|----------|---------|-------------------|
+|`value`   |*string* | |
+
+**Validation of String**
+
+```js
+$savana.is.CPF('hello'); // true
+```
 
 #### $savana.is.IE()
 
-...
+**Validation of Browser IE**
 
-#### $savana.is.NULL()
+```js
+$savana.is.IE(); // true
+```
 
-...
+#### $savana.is.NULL(value)
 
-#### $savana.is.undefined()
+**Arguments**
 
-...
+| Argument | Type    | Options           |
+|----------|---------|-------------------|
+|`value`   |*null* | |
 
-#### $savana.is.NAN()
+**Validation of String**
 
-...
+```js
+$savana.is.NULL(1); // false
+$savana.is.NULL(null); // true
+```
+
+#### $savana.is.undefined(value)
+
+**Arguments**
+
+| Argument | Type    | Options           |
+|----------|---------|-------------------|
+|`value`   |*undefined* | |
+
+**Validation of Undefined**
+
+```js
+$savana.is.undefined(1); // false
+$savana.is.undefined(undefined); // true
+```
+
+#### $savana.is.NAN(value)
+
+**Arguments**
+
+| Argument | Type    | Options           |
+|----------|---------|-------------------|
+|`value`   |*string* | |
+
+**Validation of NAN**
+
+```js
+$savana.is.NAN(1); // false
+$savana.is.NAN('1'); // true
+```
 
 ### Money
 
