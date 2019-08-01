@@ -167,7 +167,7 @@ describe('Test method toArray', () => {
 
   test('Should be return the index position of object', () => {
 
-    expect(obj.toArray({'firstname': 'John'}, 'lastname')).toEqual([["firstname", "John"]]);
+    expect(obj.toArray({'firstname': 'John'})).toEqual([["firstname", "John"]]);
 
   });
 

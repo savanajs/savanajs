@@ -24,6 +24,12 @@ describe('Smoke test', () => {
 
   test('Should be exist a lib Array', () => {
 
+    expect(arr.removeAt).toBeDefined();
+
+  });
+
+  test('Should be exist a lib Array', () => {
+
     expect(arr.getIndex).toBeDefined();
 
   });
@@ -31,6 +37,12 @@ describe('Smoke test', () => {
   test('Should be exist a lib Array', () => {
 
     expect(arr.search).toBeDefined();
+
+  });
+
+  test('Should be exist a lib Array', () => {
+
+    expect(arr.searchAt).toBeDefined();
 
   });
 
@@ -77,8 +89,13 @@ describe('Test method remove', () => {
   test('Should be remove the item in array', () => {
 
     expect(arr.remove(['a','b','c'], 'b')).toEqual(['a', 'c']);
-    expect(arr.remove(['a','b','c'], null, 1)).toEqual(['a', 'c']);
     expect(arr.remove(['a','b','c'])).toEqual(['a','b','c']);
+
+  });
+
+  test('Should be remove the item in array by index', () => {
+
+    expect(arr.removeAt(['a','b','c'], 1)).toEqual(['a', 'c']);
 
   });
 
@@ -112,8 +129,13 @@ describe('Test method search', () => {
   test('Should be return the value searched', () => {
 
     expect(arr.search(['a','b','c'], 'b')).toEqual('b');
-    expect(arr.search(['a','b','c'], null, 1)).toEqual('b');
     expect(arr.search(['a','b','c'])).toEqual(['a', 'b', 'c']);
+
+  });
+
+  test('Should be return the value searched by index', () => {
+
+    expect(arr.searchAt(['a','b','c'], 1)).toEqual('b');
 
   });
 

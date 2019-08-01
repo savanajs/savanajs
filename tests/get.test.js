@@ -51,6 +51,7 @@ describe('Test method count', () => {
   test('Should return the value', () => {
 
     expect(get.count('hello')).toEqual(5);
+    expect(get.count(123)).toEqual(3);
     expect(get.count([])).toEqual(0);
     expect(get.count({})).toEqual(0);
 

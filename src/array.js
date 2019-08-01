@@ -44,6 +44,11 @@ function Array(){
     return arr;
 
   }
+  this.removeAt = (arr, position) => {
+
+    return this.remove(arr, null, position);
+
+  }
   this.getIndex = (arr, value) => {
 
     if (!arr || typeof arr !== 'object') return false;
@@ -72,6 +77,11 @@ function Array(){
     }
 
     return arr;
+
+  }
+  this.searchAt = (arr, position) => {
+
+    return this.search(arr, null, position);
 
   }
 }

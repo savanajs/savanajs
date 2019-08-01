@@ -41,6 +41,10 @@ function What(){
 
         return "Opera";
 
+    } else if (navigator.appVersion.indexOf("Edge") > -1) {
+
+      return "Edge";
+
     }
 
     return false;

@@ -49,3 +49,5 @@ jspm_packages
 #Others
 lib
 coverage
+view
+debug.log
