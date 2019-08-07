@@ -1,3 +1,5 @@
+![Felina](felina.jpg)
+
 # SavanaJS - Felina
 
 [![Build Status](https://travis-ci.org/savanajs/savanajs.svg?branch=felina)](https://travis-ci.org/savanajs/savanajs)
