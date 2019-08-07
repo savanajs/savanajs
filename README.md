@@ -151,7 +151,7 @@ Methods of manager of arrays.
 |`arr1 *`   |*array* | |
 |`arr2`   |*array* | |
 
-**Get the value by index of array**
+**Intersection of two given sets A and B is a set which consists of all the elements which are common to both A and B.**
 
 ```js
 $savana.array.intersection(['a','b','c'], ['b']); // ['b']

@@ -157,6 +157,16 @@ function Array() {
 
     return _this.search(arr, null, position);
   };
+  this.intersection = function (arr_a, arr_b) {
+
+    if ((typeof arr_a === 'undefined' ? 'undefined' : _typeof(arr_a)) != "object" || (typeof arr_b === 'undefined' ? 'undefined' : _typeof(arr_b)) != "object") return false;
+
+    var arr = new Set(arr_b);
+
+    return arr_a.filter(function (item) {
+      return arr.has(item);
+    });
+  };
 }
 
 // Usando na função "require" do NODEJS
