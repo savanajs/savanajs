@@ -84,6 +84,15 @@ function Array(){
     return this.search(arr, null, position);
 
   }
+  this.intersection = (arr_a, arr_b) => {
+
+    if (typeof arr_a != "object" || typeof arr_b != "object") return false;
+
+    const arr = new Set(arr_b);
+
+    return arr_a.filter(item => arr.has(item))
+
+  }
 }
 
 // Usando na função "require" do NODEJS

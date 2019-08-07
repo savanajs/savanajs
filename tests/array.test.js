@@ -10,39 +10,45 @@ describe('Smoke test', () => {
 
   });
 
-  test('Should be exist a lib Array', () => {
+  test('Should be exist a lib Array add', () => {
 
     expect(arr.add).toBeDefined();
 
   });
 
-  test('Should be exist a lib Array', () => {
+  test('Should be exist a lib Array remove', () => {
 
     expect(arr.remove).toBeDefined();
 
   });
 
-  test('Should be exist a lib Array', () => {
+  test('Should be exist a lib Array removeAt', () => {
 
     expect(arr.removeAt).toBeDefined();
 
   });
 
-  test('Should be exist a lib Array', () => {
+  test('Should be exist a lib Array getIndex', () => {
 
     expect(arr.getIndex).toBeDefined();
 
   });
 
-  test('Should be exist a lib Array', () => {
+  test('Should be exist a lib Array search', () => {
 
     expect(arr.search).toBeDefined();
 
   });
 
-  test('Should be exist a lib Array', () => {
+  test('Should be exist a lib Array searchAt', () => {
 
     expect(arr.searchAt).toBeDefined();
+
+  });
+
+  test('Should be exist a lib Array intersection', () => {
+
+    expect(arr.intersection).toBeDefined();
 
   });
 
@@ -136,6 +142,27 @@ describe('Test method search', () => {
   test('Should be return the value searched by index', () => {
 
     expect(arr.searchAt(['a','b','c'], 1)).toEqual('b');
+
+  });
+
+});
+
+describe('Test method intersection', () => {
+
+  test('Should be return false by passed params empty', () => {
+
+    expect(arr.intersection()).toBeFalsy();
+    expect(arr.intersection(1)).toBeFalsy();
+    expect(arr.intersection(1,2)).toBeFalsy();
+    expect(arr.intersection('a')).toBeFalsy();
+    expect(arr.intersection('a','b')).toBeFalsy();
+
+  });
+
+  test('Should be return the value intersection', () => {
+
+    expect(arr.intersection(['a','b','c'], ['b'])).toEqual(['b']);
+    expect(arr.intersection([1,2,3,4,5], [3,4])).toEqual([3,4]);
 
   });
 

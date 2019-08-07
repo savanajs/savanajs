@@ -137,6 +137,23 @@ Methods of manager of arrays.
  $savana.array.searchAt(['a','b','c'], 1); // b
 ```
 
+
+#### $savana.array.intersection(arr1, arr2)
+
+**Arguments**
+
+| Argument | Type    | Options           |
+|----------|---------|-------------------|
+|`arr1 *`   |*array* | |
+|`arr2`   |*array* | |
+
+**Get the value by index of array**
+
+```js
+$savana.array.intersection(['a','b','c'], ['b']); // ['b']
+$savana.array.intersection([1,2,3,4,5], [3,4]); // [3,4]
+```
+
 ### Cookie
 
 Methods of manager of cookies.
