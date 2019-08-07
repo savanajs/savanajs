@@ -1,5 +1,7 @@
 ![Felina](felina.jpg)
 
+Photo credit: [jjjj56cp](https://visualhunt.co/a3/68e890) on [Visualhunt.com](https://visualhunt.com/re5/95c90009) / [CC BY-NC-SA](http://creativecommons.org/licenses/by-nc-sa/2.0/)
+
 # SavanaJS - Felina
 
 [![Build Status](https://travis-ci.org/savanajs/savanajs.svg?branch=felina)](https://travis-ci.org/savanajs/savanajs)
