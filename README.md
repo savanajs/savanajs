@@ -27,6 +27,27 @@ Insert in your end body.
 <script src="/dist/savana.min.js"></script>
 ```
 
+Or import
+
+```javascript
+import $savana from "savana.min.js";
+```
+
+## Summary
+
+- [Arrays](#user-content-arrays) 
+- [Cookie](#user-content-cookie)
+- [Date](#user-content-date)
+- [Get](#user-content-get)
+- [Is](#user-content-is)
+- [Money](#user-content-money)
+- [Object](#user-content-object)
+- [String](#user-content-string)
+- [To](#user-content-to)
+- [URL](#user-content-url)
+- [WEB Storage](#user-content-web-storage)
+- [What](#user-content-web-what)
+
 ## Methods
 
 Just below we see the documentation and examples of use of framework
@@ -37,7 +58,7 @@ Methods of manager of arrays.
 
 #### $savana.array.add(array, value, position)
 
-**Arguments**
+Arguments
 
 | Argument | Type    | Options           |
 |----------|---------|-------------------|
@@ -46,20 +67,20 @@ Methods of manager of arrays.
 |`position`   |*string* | last, first |
 
 
-**Add value in last position of array**
+Add value in last position of array
 
 ```js
  $savana.array.add([1,2,3], 4); // [1,2,3,4]
  $savana.array.add([1,2,3], 4, "last"); // [1,2,3,4]
 ```
 
-**Add value in first position of array**
+Add value in first position of array
 
 ```js
  $savana.array.add([1,2,3], 4, "first"); // [4,1,2,3]
 ```
 
-**Add value in position of array**
+Add value in position of array
 
 ```js
  $savana.array.add([1,2,3], 4, 1); // [1,4,2,3]
@@ -67,14 +88,14 @@ Methods of manager of arrays.
 
 #### $savana.array.remove(array, value)
 
-**Arguments**
+Arguments
 
 | Argument | Type    | Options           |
 |----------|---------|-------------------|
 |`array *`   |*string* | |
 |`value *`   |*string or number* | |
 
-**Remove the value of array**
+Remove the value of array
 
 ```js
  $savana.array.remove(['a','b','c'], 'b'); // ['a','c']
@@ -82,14 +103,14 @@ Methods of manager of arrays.
 
 #### $savana.array.removeAt(array, index)
 
-**Arguments**
+Arguments
 
 | Argument | Type    | Options           |
 |----------|---------|-------------------|
 |`array *`   |*string* | |
 |`index *`   |*number | |
 
-**Remove the index position of array**
+Remove the index position of array
 
 ```js
  $savana.array.removeAt(['a','b','c'], 1); // ['a','c']
@@ -97,14 +118,14 @@ Methods of manager of arrays.
 
 #### $savana.array.getIndex(arr, value)
 
-**Arguments**
+Arguments
 
 | Argument | Type    | Options           |
 |----------|---------|-------------------|
 |`array *`   |*string* | |
 |`value *`   |*string or number* | |
 
-**Get index position of array**
+Get index position of array
 
 ```js
  $savana.array.getIndex(['a','b','c'], 'b'); // 1
@@ -112,7 +133,7 @@ Methods of manager of arrays.
 
 #### $savana.array.search(arr, value, position)
 
-**Arguments**
+Arguments
 
 | Argument | Type    | Options           |
 |----------|---------|-------------------|
@@ -120,7 +141,7 @@ Methods of manager of arrays.
 |`value *`   |*string or number or NULL* | |
 |`position`   |*string* | last, first |
 
-**Get the value of array**
+Get the value of array
 
 ```js
  $savana.array.search(['a','b','c'], 'b'); // b
@@ -128,14 +149,14 @@ Methods of manager of arrays.
 
 #### $savana.array.searchAt(arr, index)
 
-**Arguments**
+Arguments
 
 | Argument | Type    | Options           |
 |----------|---------|-------------------|
 |`array *`   |*string* | |
 |`index`   |*number* | |
 
-**Get the value by index of array**
+Get the value by index of array
 
 ```js
  $savana.array.searchAt(['a','b','c'], 1); // b
@@ -144,14 +165,14 @@ Methods of manager of arrays.
 
 #### $savana.array.intersection(arr1, arr2)
 
-**Arguments**
+Arguments
 
 | Argument | Type    | Options           |
 |----------|---------|-------------------|
 |`arr1 *`   |*array* | |
 |`arr2`   |*array* | |
 
-**Intersection of two given sets A and B is a set which consists of all the elements which are common to both A and B.**
+Intersection of two given sets A and B is a set which consists of all the elements which are common to both A and B.
 
 ```js
 $savana.array.intersection(['a','b','c'], ['b']); // ['b']
@@ -164,13 +185,13 @@ Methods of manager of cookies.
 
 #### $savana.cookie.get(name)
 
-**Arguments**
+Arguments
 
 | Argument | Type    | Options           |
 |----------|---------|-------------------|
 |`name *`   |*string* | |
 
-**Get the value of array**
+Get the value of array
 
 ```js
  $savana.cookie.get('fullname'); // John Carter
@@ -178,13 +199,13 @@ Methods of manager of cookies.
 
 #### $savana.cookie.exists(name)
 
-**Arguments**
+Arguments
 
 | Argument | Type    | Options           |
 |----------|---------|-------------------|
 |`name *`   |*string* | |
 
-**Verify if cookie exists**
+Verify if cookie exists
 
 ```js
  $savana.cookie.exists('fullname'); // true or false
@@ -192,7 +213,7 @@ Methods of manager of cookies.
 
 #### $savana.cookie.remove(name, path, domain)
 
-**Arguments**
+Arguments
 
 | Argument | Type    | Options           |
 |----------|---------|-------------------|
@@ -200,7 +221,7 @@ Methods of manager of cookies.
 |`path`   |*string* | |
 |`domain`   |*string* | 
 
-**Remove cookie**
+Remove cookie
 
 ```js
  $savana.cookie.remove("exemple"); // true or false
@@ -209,7 +230,7 @@ Methods of manager of cookies.
 
 #### $savana.cookie.removeAll()
 
-**Remove all cookies**
+Remove all cookies
 
 ```js
  $savana.cookie.removeAll(); // true or false
@@ -217,7 +238,7 @@ Methods of manager of cookies.
 
 #### $savana.cookie.set(name, value, time, path, domain)
 
-**Arguments**
+Arguments
 
 | Argument | Type    | Options           |
 |----------|---------|-------------------|
@@ -227,11 +248,11 @@ Methods of manager of cookies.
 |`path`   |*string* | |
 |`domain`   |*string* | 
 
-**Save cookie**
+Save cookie
 
 ```js
- $savana.cookie.set("exemple", "hello", 2);
- $savana.cookie.set("exemple2", "hello", 2, "/home", "subdomain.site.com");
+ $savana.cookie.set("exemple", "hello", 2); // true
+ $savana.cookie.set("exemple2", "hello", 2, "/home", "subdomain.site.com"); // true
 ```
 
 ### Date
@@ -240,18 +261,18 @@ Methods of manager of date.
 
 #### $savana.date.timestamp()
 
-**Get the timestamp**
+Get the timestamp
 
 ```js
-$savana.date.timestamp()
+$savana.date.timestamp(); //123456879
 ```
 
 #### $savana.date.daysDifferenceBetweenDates()
 
-**Get the defference between dates**
+Get the defference between dates
 
 ```js
-$savana.date.daysDifferenceBetweenDates(new Date(2016, 10, 20), new Date(2016, 10, 30))
+$savana.date.daysDifferenceBetweenDates(new Date(2016, 10, 20), new Date(2016, 10, 30)); // 10
 ```
 
 ### Get
@@ -260,13 +281,13 @@ Methods of manager of get.
 
 #### $savana.get.getNumberOfString(value)
 
-**Arguments**
+Arguments
 
 | Argument | Type    | Options           |
 |----------|---------|-------------------|
 |`value *`   |*string* | |
 
-**Get number of strings**
+Get number of strings
 
 ```js
 $savana.get.getNumberOfString('hello10hello') // 10
@@ -274,25 +295,25 @@ $savana.get.getNumberOfString('hello10hello') // 10
 
 #### $savana.get.count(value)
 
-**Arguments**
+Arguments
 
 | Argument | Type    | Options           |
 |----------|---------|-------------------|
 |`value *`   |*string, number or Object* | |
 
-**Get the quantity of letters**
+Get the quantity of letters
 
 ```js
 $savana.get.count('hello') // 5
 ```
 
-**Get the quantity items of array**
+Get the quantity items of array
 
 ```js
 $savana.get.count([]) // 0
 ```
 
-**Get the quantity items of object**
+Get the quantity items of object
 
 ```js
 $savana.get.count({}) // 0
@@ -304,13 +325,13 @@ Methods of manager of validations.
 
 #### $savana.is.email(email)
 
-**Arguments**
+Arguments
 
 | Argument | Type    | Options           |
 |----------|---------|-------------------|
 |`email *`   |*string* | |
 
-**Validation of email**
+Validation of email
 
 ```js
 $savana.is.email('email@gmail.com.br'); // true
@@ -319,13 +340,13 @@ $savana.is.email('email@gmail.com.br'); // true
 #### $savana.is.number(number)
 
 
-**Arguments**
+Arguments
 
 | Argument | Type    | Options           |
 |----------|---------|-------------------|
 |`number *`   |*number* | |
 
-**Validation of number**
+Validation of number
 
 ```js
 $savana.is.number(10); // true
@@ -333,13 +354,13 @@ $savana.is.number(10); // true
 
 #### $savana.is.url(url)
 
-**Arguments**
+Arguments
 
 | Argument | Type    | Options           |
 |----------|---------|-------------------|
 |`url *`   |*string* | |
 
-**Validation of URL**
+Validation of URL
 
 ```js
 $savana.is.url('https://github.com'); // true
@@ -347,13 +368,13 @@ $savana.is.url('https://github.com'); // true
 
 #### $savana.is.function(value)
 
-**Arguments**
+Arguments
 
 | Argument | Type    | Options           |
 |----------|---------|-------------------|
 |`value *`   |*function* | |
 
-**Validation of function**
+Validation of function
 
 ```js
 $savana.is.function(function(){}); // true
@@ -361,13 +382,13 @@ $savana.is.function(function(){}); // true
 
 #### $savana.is.object(value)
 
-**Arguments**
+Arguments
 
 | Argument | Type    | Options           |
 |----------|---------|-------------------|
 |`value *`   |*object* | |
 
-**Validation of object**
+Validation of object
 
 ```js
 $savana.is.object({}); // true
@@ -376,13 +397,13 @@ $savana.is.object({}); // true
 
 #### $savana.is.CPF(value)
 
-**Arguments**
+Arguments
 
 | Argument | Type    | Options           |
 |----------|---------|-------------------|
 |`value *`   |*string or number* | |
 
-**Validation of CPF**
+Validation of CPF
 
 ```js
 $savana.is.CPF('12345678909'); // true
@@ -390,13 +411,13 @@ $savana.is.CPF('12345678909'); // true
 
 #### $savana.is.string(value)
 
-**Arguments**
+Arguments
 
 | Argument | Type    | Options           |
 |----------|---------|-------------------|
 |`value *`   |*string* | |
 
-**Validation of String**
+Validation of String
 
 ```js
 $savana.is.CPF('hello'); // true
@@ -404,7 +425,7 @@ $savana.is.CPF('hello'); // true
 
 #### $savana.is.IE()
 
-**Validation of Browser IE**
+Validation of Browser IE
 
 ```js
 $savana.is.IE(); // true
@@ -412,13 +433,13 @@ $savana.is.IE(); // true
 
 #### $savana.is.NULL(value)
 
-**Arguments**
+Arguments
 
 | Argument | Type    | Options           |
 |----------|---------|-------------------|
 |`value *`   |*null* | |
 
-**Validation of String**
+Validation of String
 
 ```js
 $savana.is.NULL(1); // false
@@ -427,13 +448,13 @@ $savana.is.NULL(null); // true
 
 #### $savana.is.undefined(value)
 
-**Arguments**
+Arguments
 
 | Argument | Type    | Options           |
 |----------|---------|-------------------|
 |`value *`   |*undefined* | |
 
-**Validation of Undefined**
+Validation of Undefined
 
 ```js
 $savana.is.undefined(1); // false
@@ -442,13 +463,13 @@ $savana.is.undefined(undefined); // true
 
 #### $savana.is.NAN(value)
 
-**Arguments**
+Arguments
 
 | Argument | Type    | Options           |
 |----------|---------|-------------------|
 |`value *`   |*string* | |
 
-**Validation of NAN**
+Validation of NAN
 
 ```js
 $savana.is.NAN(1); // false
@@ -461,7 +482,7 @@ Methods of manager of validations.
 
 #### $savana.money.format(value, dec_point, thousands_sep)
 
-**Arguments**
+Arguments
 
 | Argument | Type    | Options           |
 |----------|---------|-------------------|
@@ -469,7 +490,7 @@ Methods of manager of validations.
 |`dec_point *` |*string* | , |
 |`thousands_sep *`   |*string* | . |
 
-**Format money**
+Format money
 
 ```js
 $savana.money.format('10',',','.'); // 10,00
@@ -477,13 +498,13 @@ $savana.money.format('10',',','.'); // 10,00
 
 #### $savana.money.priceToFloat(value)
 
-**Arguments**
+Arguments
 
 | Argument | Type    | Options           |
 |----------|---------|-------------------|
 |`value *`   |*string* | |
 
-**Convert price value to float**
+Convert price value to float
 
 ```js
 $savana.money.priceToFloat("R$ 100,00"); // 100.00
@@ -491,14 +512,14 @@ $savana.money.priceToFloat("R$ 100,00"); // 100.00
 
 #### $savana.money.bill(value, discount)
 
-**Arguments**
+Arguments
 
 | Argument | Type    | Options           |
 |----------|---------|-------------------|
 |`value *`   |*string or number* | |
 |`discount *`   |*number* | |
 
-**Calculate Billet Value**
+Calculate Billet Value
 
 ```js
 $savana.money.bill(2000, 10); // {total: "1.800,00", descount: "200,00"};
@@ -507,7 +528,7 @@ $savana.money.bill("R$ 2.000,00", 10); // {total: "1.800,00", descount: "200,00"
 
 #### $savana.money.installment(value, quantity_installment, min_installment)
 
-**Arguments**
+Arguments
 
 | Argument | Type    | Options           |
 |----------|---------|-------------------|
@@ -515,7 +536,7 @@ $savana.money.bill("R$ 2.000,00", 10); // {total: "1.800,00", descount: "200,00"
 |`quantity_installment *`   |*number* | |
 |`min_installment *`   |*number* | |
 
-**Calculate of installment**
+Calculate of installment
 
 ```js
 $savana.money.installment("R$ 380.50", 10, 50); 
@@ -526,7 +547,7 @@ $savana.money.installment(380.50, 10, 50);
 
 #### $savana.money.financing(value, quantity_installment, min_installment, interest)
 
-**Arguments**
+Arguments
 
 | Argument | Type    | Options           |
 |----------|---------|-------------------|
@@ -535,7 +556,7 @@ $savana.money.installment(380.50, 10, 50);
 |`min_installment *`   |*number* | |
 |`interest *`   |*number* | |
 
-**Calculate of financing**
+Calculate of financing
 
 ```js
 $savana.money.financing("R$ 500,00", 10, 100, 2);
@@ -546,14 +567,14 @@ $savana.money.money.financing(500.00, 10, 100, 2));
 
 #### $savana.money.percentalDifference(oldValue, newValue)
 
-**Arguments**
+Arguments
 
 | Argument | Type    | Options           |
 |----------|---------|-------------------|
 |`oldValue *`   |*string or number* | |
 |`newValue *`   |*string or number* | |
 
-**Calculate the value percental Difference**
+Calculate the value percental Difference
 
 ```js
 $savana.money.percentalDifference("R$ 100,00","R$ 50,00");
@@ -564,14 +585,14 @@ $savana.money.percentalDifference(100.00, 50.00);
 
 #### $savana.money.percentageDiscount(oldValue, newValue)
 
-**Arguments**
+Arguments
 
 | Argument | Type    | Options           |
 |----------|---------|-------------------|
 |`oldValue *`   |*string or number* | |
 |`newValue *`   |*string or number* | |
 
-**Calculate the value percentage discount**
+Calculate the value percentage discount
 
 ```js
 $savana.money.percentageDiscount("R$ 100,00","R$ 50,00");
@@ -604,14 +625,14 @@ Methods of manager of objects.
 
 #### $savana.object.extends(objectValue1, objectValue2)
 
-**Arguments**
+Arguments
 
 | Argument | Type    | Options           |
 |----------|---------|-------------------|
 |`objectValue1 *`   |*Object* | |
 |`objectValue2 *`   |*Object* | |
 
-**Extends a object**
+Extends a object
 
 ```js
 $savana.obj.extends({'firstname': 'John'}, {'lastname': 'Miller'});
@@ -620,13 +641,13 @@ $savana.obj.extends({'firstname': 'John'}, {'lastname': 'Miller'});
 
 #### $savana.object.create(objectValue)
 
-**Arguments**
+Arguments
 
 | Argument | Type    | Options           |
 |----------|---------|-------------------|
 |`objectValue *`   |*Object* | |
 
-**Create a object**
+Create a object
 
 ```js
 $savana.obj.create({'firstname': 'John'});
@@ -635,14 +656,14 @@ $savana.obj.create({'firstname': 'John'});
 
 #### $savana.object.remove(objectValue, itemDelete)
 
-**Arguments**
+Arguments
 
 | Argument | Type    | Options           |
 |----------|---------|-------------------|
 |`objectValue *`   |*Object* | |
 |`itemDelete *`   |*string* | |
 
-**Remove a object item**
+Remove a object item
 
 ```js
 $savana.obj.remove({'firstname': 'John','lastname': 'Miller'}, 'lastname');
@@ -651,14 +672,14 @@ $savana.obj.remove({'firstname': 'John','lastname': 'Miller'}, 'lastname');
 
 #### $savana.object.search(objectValue, itemDelete)
 
-**Arguments**
+Arguments
 
 | Argument | Type    | Options           |
 |----------|---------|-------------------|
 |`objectValue *`   |*Object* | |
 |`itemDelete *`   |*string* | |
 
-**Get value by key**
+Get value by key
 
 ```js
 $savana.obj.search({'firstname': 'John','lastname': 'Miller'}, 'lastname');
@@ -667,13 +688,13 @@ $savana.obj.search({'firstname': 'John','lastname': 'Miller'}, 'lastname');
 
 #### $savana.object.getKeys(objectValue)
 
-**Arguments**
+Arguments
 
 | Argument | Type    | Options           |
 |----------|---------|-------------------|
 |`objectValue *`   |*Object* | |
 
-**Get keys**
+Get keys
 
 ```js
 $savana.obj.getKeys({'firstname': 'John','lastname': 'Miller'});
@@ -682,13 +703,13 @@ $savana.obj.getKeys({'firstname': 'John','lastname': 'Miller'});
 
 #### $savana.object.getValues(objectValue)
 
-**Arguments**
+Arguments
 
 | Argument | Type    | Options           |
 |----------|---------|-------------------|
 |`objectValue *`   |*Object* | |
 
-**Get values**
+Get values
 
 ```js
 $savana.obj.getValues({'firstname': 'John','lastname': 'Miller'});
@@ -697,13 +718,13 @@ $savana.obj.getValues({'firstname': 'John','lastname': 'Miller'});
 
 #### $savana.object.toArray(objectValue)
 
-**Arguments**
+Arguments
 
 | Argument | Type    | Options           |
 |----------|---------|-------------------|
 |`objectValue *`   |*Object* | |
 
-**Convert Object to Array**
+Convert Object to Array
 
 ```js
 $savana.obj.toArray({'firstname': 'John'});
@@ -716,7 +737,7 @@ Methods of manager of strings.
 
 #### $savana.string.contain(value)
 
-**Arguments**
+Arguments
 
 | Argument | Type    | Options           |
 |----------|---------|-------------------|
@@ -730,7 +751,7 @@ $savana.string.contain(['a','b','c'], 'd'); // true or false
 
 #### $savana.string.limitLetter(value, start, end)
 
-**Arguments**
+Arguments
 
 | Argument | Type    | Options           |
 |----------|---------|-------------------|
@@ -746,14 +767,14 @@ $savana.string.limitLetter('hello world', 0, 10); // hello worl...
 
 #### $savana.string.limitWord(value, end)
 
-**Arguments**
+Arguments
 
 | Argument | Type    | Options           |
 |----------|---------|-------------------|
 |`value *`   |*string or array* | |
 |`end *`   |*number* | |
 
-**Letter limite**
+Letter limite
 
 ```js
 $savana.string.limitWord('hello world', 1); // hello ...
@@ -761,13 +782,13 @@ $savana.string.limitWord('hello world', 1); // hello ...
 
 #### $savana.string.trim(value)
 
-**Arguments**
+Arguments
 
 | Argument | Type    | Options           |
 |----------|---------|-------------------|
 |`value *`   |*string* | |
 
-**Spaces remove**
+Spaces remove
 
 ```js
 $savana.string.trim(' Hello '); // Hello
@@ -779,13 +800,13 @@ Methods of manager of convertions.
 
 #### $savana.to.HTML(value)
 
-**Arguments**
+Arguments
 
 | Argument | Type    | Options           |
 |----------|---------|-------------------|
 |`value *`   |*string* | |
 
-**Convert string to HTML**
+Convert string to HTML
 
 ```js
 $savana.to.HTML('<p>Hello World</p>');
@@ -793,13 +814,13 @@ $savana.to.HTML('<p>Hello World</p>');
 
 #### $savana.to.JSON(value)
 
-**Arguments**
+Arguments
 
 | Argument | Type    | Options           |
 |----------|---------|-------------------|
 |`value *`   |*string* | |
 
-**Convert string to JSON**
+Convert string to JSON
 
 ```js
 $savana.to.JSON('{"name": "Hello"}'); // {"name": "Hello"}
@@ -807,13 +828,13 @@ $savana.to.JSON('{"name": "Hello"}'); // {"name": "Hello"}
 
 #### $savana.to.string(value)
 
-**Arguments**
+Arguments
 
 | Argument | Type    | Options           |
 |----------|---------|-------------------|
 |`value *`   |*number or object* | |
 
-**Convert string to JSON**
+Convert string to JSON
 
 ```js
 $savana.to.string({"name": "Hello"}); // {"name": "Hello"}
@@ -821,13 +842,13 @@ $savana.to.string({"name": "Hello"}); // {"name": "Hello"}
 
 #### $savana.to.XML(value)
 
-**Arguments**
+Arguments
 
 | Argument | Type    | Options           |
 |----------|---------|-------------------|
 |`value *`   |*string* | |
 
-**Convert string to XML**
+Convert string to XML
 
 ```js
 $savana.to.XML('<p>Hello World</p>');
@@ -835,13 +856,13 @@ $savana.to.XML('<p>Hello World</p>');
 
 #### $savana.to.rewrite(value)
 
-**Arguments**
+Arguments
 
 | Argument | Type    | Options           |
 |----------|---------|-------------------|
 |`value *`   |*string* | |
 
-**Convert string to rewrite**
+Convert string to rewrite
 
 ```js
 $savana.to.rewrite('Hello World caça está'); // hello-world-caca-esta
@@ -849,13 +870,13 @@ $savana.to.rewrite('Hello World caça está'); // hello-world-caca-esta
 
 #### $savana.to.upper(value)
 
-**Arguments**
+Arguments
 
 | Argument | Type    | Options           |
 |----------|---------|-------------------|
 |`value *`   |*string* | |
 
-**Convert string to uppercase**
+Convert string to uppercase
 
 ```js
 $savana.to.upper('hello world'); // HELLO WORLD
@@ -863,13 +884,13 @@ $savana.to.upper('hello world'); // HELLO WORLD
 
 #### $savana.to.lower(value)
 
-**Arguments**
+Arguments
 
 | Argument | Type    | Options           |
 |----------|---------|-------------------|
 |`value *`   |*string* | |
 
-**Convert string to lowercase**
+Convert string to lowercase
 
 ```js
 $savana.to.lower('HELLO WORLD'); // hello world
@@ -881,13 +902,13 @@ Methods of manager of urls.
 
 #### $savana.url.redirect(url)
 
-**Arguments**
+Arguments
 
 | Argument | Type    | Options           |
 |----------|---------|-------------------|
 |`url *`   |*string* | |
 
-**Redirect to url**
+Redirect to url
 
 ```js
 $savana.url.redirect('http://www.google.com');
@@ -895,14 +916,14 @@ $savana.url.redirect('http://www.google.com');
 
 #### $savana.url.getParams(parameter, url)
 
-**Arguments**
+Arguments
 
 | Argument | Type    | Options           |
 |----------|---------|-------------------|
 |`parameter *`   |*string* | |
 |`url *`   |*string* | |
 
-**Get parameter**
+Get parameter
 
 ```js
 $savana.url.getParams('v','http://www.google.com?v=hello'); // hello
@@ -910,7 +931,7 @@ $savana.url.getParams('v','http://www.google.com?v=hello'); // hello
 
 #### $savana.url.getCurrent()
 
-**Get the url current**
+Get the url current
 
 ```js
 $savana.url.getCurrent();
@@ -918,7 +939,7 @@ $savana.url.getCurrent();
 
 #### $savana.url.getInfos()
 
-**Get the url infos**
+Get the url infos
 
 ```js
 $savana.url.getInfos();
@@ -930,14 +951,14 @@ Methods of manager of storage browser.
 
 #### $savana.storage.create(name, value)
 
-**Arguments**
+Arguments
 
 | Argument | Type    | Options           |
 |----------|---------|-------------------|
 |`name *`   |*string* | |
 |`value *`   |*string or array* | |
 
-**Create**
+Create
 
 ```js
 $savana.webStorage.create('test', [{"name": "John","lastname": "Miller"}]);
@@ -946,13 +967,13 @@ $savana.webStorage.create('test2', "John")
 
 #### $savana.storage.select(name)
 
-**Arguments**
+Arguments
 
 | Argument | Type    | Options           |
 |----------|---------|-------------------|
 |`name *`   |*string* | |
 
-**Select**
+Select
 
 ```js
 $savana.webStorage.select('test'); //  [{"name": "John","lastname": "Miller"}]
@@ -961,14 +982,14 @@ $savana.webStorage.select('test2'); // John
 
 #### $savana.storage.delete(name, index)
 
-**Arguments**
+Arguments
 
 | Argument | Type    | Options           |
 |----------|---------|-------------------|
 |`name *`   |*string* | |
 |`index`   |*number* | |
 
-**Delete storage or item of storage**
+Delete storage or item of storage
 
 ```js
 $savana.webStorage.delete('test');
@@ -981,7 +1002,7 @@ Methods of manager of urls.
 
 #### $savana.what.browser()
 
-**Get the browser current**
+Get the browser current
 
 ```js
 $savana.what.browser(); // Chrome, Firefox, Safari, Opera, Edge, EI7...EI12
@@ -989,7 +1010,7 @@ $savana.what.browser(); // Chrome, Firefox, Safari, Opera, Edge, EI7...EI12
 
 #### $savana.what.device()
 
-**Get the device in use**
+Get the device in use
 
 ```js
 $savana.what.device(); // mobile, tablet ou desktop
