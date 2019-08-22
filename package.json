@@ -4,8 +4,8 @@
   "description": "Javascript framework for building web applications wildest",
   "main": "index.js",
   "scripts": {
-    "clear": "rimraf lib",
-    "build_cmd": "./node_modules/.bin/babel --out-dir lib src",
+    "clear": "rimraf savanajs",
+    "build_cmd": "./node_modules/.bin/babel --out-dir savanajs src",
     "build": "npm run clear && npm run build_cmd",
     "build:watch": "npm run build -- --watch",
     "build:umd": "./node_modules/.bin/webpack --output-filename savanajs.js",
@@ -22,7 +22,7 @@
   },
   "files": [
     "dist",
-    "lib"
+    "savanajs"
   ],
   "repository": {
     "type": "git",
