@@ -27,12 +27,6 @@ Insert in your end body.
 <script src="/dist/savana.min.js"></script>
 ```
 
-Or import
-
-```javascript
-import $savana from "savana.min.js";
-```
-
 ## Summary
 
 - [Arrays](#user-content-arrays) 
