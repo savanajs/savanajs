@@ -52,7 +52,7 @@
     "jest": "^23.3.0",
     "jest-html-reporter": "^2.4.3",
     "rimraf": "^2.6.3",
-    "webpack": "^2.6.1",
+    "webpack": "^5.75.0",
     "webpack-dev-server": "^2.4.5"
   }
 }
